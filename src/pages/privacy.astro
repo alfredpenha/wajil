@@ -2,13 +2,13 @@
 import Base from '../layouts/Base.astro';
 import site from '../content/site.json';
 
-const { privacy, labels } = site;
+const { privacy } = site;
 ---
 <Base title={privacy.title} description={privacy.summary}>
   <main class="px-6 py-16 md:px-12">
     <div class="mx-auto max-w-3xl space-y-8">
       <header class="space-y-4">
-        <p class="text-xs uppercase tracking-[0.3em] text-fog">{labels.privacyUpdated} {privacy.updated}</p>
+        <p class="text-xs uppercase tracking-[0.3em] text-fog">Actualizado {privacy.updated}</p>
         <h1 class="text-3xl font-semibold text-sand md:text-4xl">{privacy.title}</h1>
         <p class="text-base text-fog">{privacy.summary}</p>
       </header>
@@ -18,7 +18,7 @@ const { privacy, labels } = site;
         ))}
       </section>
       <a class="text-xs uppercase tracking-[0.3em] text-gold" href="/">
-        {labels.privacyBack}
+        Volver al inicio
       </a>
     </div>
   </main>

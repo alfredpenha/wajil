@@ -1,0 +1,34 @@
+---
+const { brand, location, footer } = Astro.props;
+---
+<section id="ubicacion" class="border-t border-fog/10 px-6 py-12 md:px-12">
+  <div class="mx-auto max-w-6xl">
+    <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+      <div class="space-y-2">
+        <p class="text-xs uppercase tracking-[0.3em] text-fog">Ubicacion</p>
+        <h2 class="text-2xl font-semibold text-sand md:text-3xl">{location.title}</h2>
+        <a class="text-xs uppercase tracking-[0.3em] text-gold" href={location.uberHref}>
+          {location.uberLabel}
+        </a>
+      </div>
+      <div class="flex gap-6 text-xs uppercase tracking-[0.2em] text-fog">
+        {location.social.map((link) => (
+          <a class="transition hover:text-gold" href={link.href}>{link.label}</a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-fog/10 px-6 py-8 md:px-12">
+  <div class="mx-auto flex max-w-6xl flex-col gap-6 text-xs uppercase tracking-[0.2em] text-fog md:flex-row md:items-center md:justify-between">
+    <div class="flex items-center gap-3 text-gold">
+      <span class="text-sm font-semibold tracking-[0.4em]">{footer.lockup}</span>
+      <span class="text-[10px] text-fog">{brand.tagline}</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <span>{footer.note}</span>
+      <a class="transition hover:text-gold" href={footer.privacyHref}>{footer.privacyLabel}</a>
+    </div>
+  </div>
+</footer>

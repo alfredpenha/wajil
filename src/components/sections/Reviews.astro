@@ -1,0 +1,16 @@
+---
+const { reviews } = Astro.props;
+---
+<section id="resenas" class="border-t border-fog/10 px-6 py-16 md:px-12">
+  <div class="mx-auto max-w-6xl">
+    <h2 class="mb-8 text-2xl font-semibold text-sand md:text-3xl">{reviews.title}</h2>
+    <div class="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
+      {reviews.items.map((review) => (
+        <article class="min-w-[240px] snap-start rounded-3xl border border-fog/15 bg-ink/70 p-6 md:min-w-0">
+          <p class="mb-4 text-sm leading-relaxed text-sand">"{review.quote}"</p>
+          <p class="text-xs uppercase tracking-[0.2em] text-gold">{review.name}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

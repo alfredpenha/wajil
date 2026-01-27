@@ -1,0 +1,32 @@
+---
+const { brand, navigation, uberEats } = Astro.props;
+---
+<header class="sticky top-0 z-50 border-b border-fog/10 bg-ink/85 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-12">
+    <a href="#inicio" class="text-sm font-semibold tracking-[0.4em] text-gold">
+      {brand.logo}
+    </a>
+    <nav class="hidden items-center gap-6 text-xs uppercase tracking-[0.2em] text-fog md:flex">
+      {navigation.map((item) => (
+        <a class="transition hover:text-gold" href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+    <a
+      class="hidden rounded-full bg-gold px-5 py-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-ink transition hover:shadow-glow md:inline-flex"
+      href={uberEats.href}
+      data-track="click_ubereats_header"
+    >
+      {uberEats.label}
+    </a>
+  </div>
+</header>
+
+<div class="fixed bottom-0 left-0 right-0 z-50 border-t border-fog/15 bg-ink/95 px-6 py-3 backdrop-blur md:hidden">
+  <a
+    class="flex items-center justify-center rounded-full bg-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink"
+    href={uberEats.href}
+    data-track="click_ubereats_bottom"
+  >
+    {uberEats.label}
+  </a>
+</div>

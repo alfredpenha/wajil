@@ -1,0 +1,37 @@
+---
+const { promise } = Astro.props;
+---
+<section class="relative overflow-hidden border-t border-fog/10 px-6 py-16 md:px-12">
+  <div class="absolute inset-0">
+    <picture>
+      {promise.background.avif ? <source srcset={promise.background.avif} type="image/avif" /> : null}
+      {promise.background.webp ? <source srcset={promise.background.webp} type="image/webp" /> : null}
+      <img
+        class="h-full w-full object-cover opacity-15"
+        src={promise.background.fallback}
+        alt={promise.background.alt}
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+    <div class="absolute inset-0 bg-ink/70"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-6xl">
+    <h2 class="mb-10 text-2xl font-semibold text-sand md:text-3xl">{promise.title}</h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      {promise.bullets.map((bullet) => (
+        <div class="rounded-3xl border border-fog/15 bg-ink/60 p-6">
+          <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full border border-gold/40">
+            <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 12h16" />
+              <path d="M12 4v16" />
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold text-sand">{bullet.title}</h3>
+          <p class="text-sm text-fog">{bullet.copy}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

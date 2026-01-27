@@ -1,0 +1,56 @@
+---
+const { hero, uberEats } = Astro.props;
+---
+<section id="inicio" class="px-6 pb-10 pt-8 md:px-12 md:pb-20">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.05fr_0.95fr]">
+    <div class="space-y-6">
+      <h1 class="text-4xl font-semibold leading-tight text-sand md:text-5xl">
+        {hero.title}
+      </h1>
+      <p class="max-w-xl text-base leading-relaxed text-fog md:text-lg">
+        {hero.subcopy}
+      </p>
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+        <a
+          class="rounded-full bg-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:shadow-glow"
+          href={uberEats.href}
+          data-track="click_ubereats_hero"
+        >
+          {uberEats.label}
+        </a>
+        <span class="text-xs uppercase tracking-[0.2em] text-fog">{hero.trust}</span>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="absolute inset-0 rounded-[32px] bg-gradient-to-t from-ink/80 via-ink/30 to-transparent md:hidden"></div>
+      <picture>
+        {hero.image.desktop.avif ? (
+          <source media="(min-width: 768px)" srcset={hero.image.desktop.avif} type="image/avif" />
+        ) : null}
+        {hero.image.desktop.webp ? (
+          <source media="(min-width: 768px)" srcset={hero.image.desktop.webp} type="image/webp" />
+        ) : null}
+        {hero.image.desktop.fallback ? (
+          <source media="(min-width: 768px)" srcset={hero.image.desktop.fallback} type="image/jpeg" />
+        ) : null}
+        {hero.image.mobile.avif ? (
+          <source srcset={hero.image.mobile.avif} type="image/avif" />
+        ) : null}
+        {hero.image.mobile.webp ? (
+          <source srcset={hero.image.mobile.webp} type="image/webp" />
+        ) : null}
+        {hero.image.mobile.fallback ? (
+          <source srcset={hero.image.mobile.fallback} type="image/jpeg" />
+        ) : null}
+        <img
+          class="aspect-[9/16] w-full rounded-[32px] border border-fog/15 object-cover md:aspect-[16/9]"
+          src={hero.image.mobile.fallback ?? hero.image.desktop.fallback}
+          alt={hero.image.alt}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+    </div>
+  </div>
+</section>

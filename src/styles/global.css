@@ -23,6 +23,10 @@ h1, h2, h3, h4 {
   @apply font-display tracking-tightest;
 }
 
+section {
+  scroll-margin-top: 96px;
+}
+
 ::selection {
   background: rgb(var(--color-gold) / 0.35);
   color: rgb(var(--color-sand));

@@ -1,102 +1,156 @@
 {
   "meta": {
-    "title": "WAJIL - Marca oficial",
-    "description": "WAJIL es una marca de experiencias esenciales: identidad, ritual y presencia con un lenguaje visual sobrio y contemporaneo.",
+    "title": "WAJIL - Tamales esenciales",
+    "description": "WAJIL es un tamal contemporaneo hecho en Soconusco, servido en Tuxtla Gutierrez con ingredientes reales y ritual diario.",
     "domain": "wajil.com",
     "favicon": "/favicon.svg"
   },
   "brand": {
     "name": "WAJIL",
-    "tagline": "Ritual contemporaneo para marcas con caracter.",
-    "location": "Ciudad de Mexico"
-  },
-  "labels": {
-    "capabilitiesTitle": "Capacidades",
-    "voicesTitle": "Voces",
-    "voicesEyebrow": "Resenas selectas",
-    "privacyUpdated": "Actualizado",
-    "privacyBack": "Volver al inicio"
+    "logo": "WAJIL",
+    "tagline": "Tamal artesanal, directo al ritual.",
+    "location": "Tuxtla Gutierrez, Chiapas"
   },
   "navigation": [
-    { "label": "Inicio", "href": "#inicio" },
-    { "label": "Manifiesto", "href": "#manifiesto" },
-    { "label": "Capacidades", "href": "#capacidades" },
-    { "label": "Voces", "href": "#voces" },
-    { "label": "Contacto", "href": "#contacto" }
+    { "label": "Producto", "href": "#producto" },
+    { "label": "Origen", "href": "#origen" },
+    { "label": "Reseñas", "href": "#resenas" },
+    { "label": "Ubicacion", "href": "#ubicacion" }
   ],
+  "uberEats": {
+    "label": "Pedir en Uber Eats",
+    "href": "https://www.ubereats.com"
+  },
   "hero": {
-    "eyebrow": "Brand landing",
-    "headline": "WAJIL disena marcas que se sienten eternas.",
-    "subhead": "Estrategia, identidad y direccion creativa para proyectos que buscan presencia y claridad sin ruido.",
-    "cta": {
-      "label": "Agenda una conversacion",
-      "href": "#contacto"
-    },
-    "secondaryCta": {
-      "label": "Ver manifiesto",
-      "href": "#manifiesto"
-    },
+    "title": "WAJIL lleva el tamal a su forma mas esencial.",
+    "subcopy": "Masa suave, relleno profundo y una tecnica precisa. Hecho en Soconusco, servido fresco en Tuxtla.",
+    "trust": "Entrega rapida en Uber Eats. Hecho a mano todos los dias.",
     "image": {
-      "alt": "Texturas metalizadas en tonos dorados sobre fondo negro.",
-      "avif": "/assets/images/hero.avif",
-      "webp": "/assets/images/hero.webp",
-      "fallback": "/assets/images/hero.jpg"
+      "alt": "IMG1 tamal servido en plato.",
+      "desktop": {
+        "avif": "",
+        "webp": "",
+        "fallback": "/assets/images/img1-hero-16x9.jpg"
+      },
+      "mobile": {
+        "avif": "",
+        "webp": "",
+        "fallback": "/assets/images/img1-hero-9x16.jpg"
+      }
     }
   },
-  "manifest": {
-    "title": "Manifiesto",
-    "body": [
-      "WAJIL trabaja con marcas que quieren serenidad, caracter y un lenguaje propio.",
-      "Nuestra metodologia se concentra en lo esencial: direccion clara, sistemas coherentes y ejecucion impecable.",
-      "Construimos presencias que resisten el tiempo y la tendencia."
+  "products": {
+    "title": "Productos",
+    "intro": "Tres formas de vivir WAJIL. Todo se pide en Uber Eats.",
+    "ctaLabel": "Pedir en Uber Eats",
+    "items": [
+      {
+        "title": "Clasico Envuelto",
+        "copy": "El tamal tradicional con masa aireada y relleno preciso.",
+        "linkLabel": "Ver en Uber Eats",
+        "image": {
+          "alt": "IMG5 clasico envuelto.",
+          "avif": "",
+          "webp": "",
+          "fallback": "/assets/images/img5-square.jpg"
+        }
+      },
+      {
+        "title": "Servido",
+        "copy": "El tamal en plato, listo para comer sin pausa.",
+        "linkLabel": "Ver en Uber Eats",
+        "image": {
+          "alt": "IMG1 servido recorte cuadrado.",
+          "avif": "",
+          "webp": "",
+          "fallback": "/assets/images/img1-square.jpg"
+        }
+      },
+      {
+        "title": "Textura",
+        "copy": "Capas y contraste para un bocado mas complejo.",
+        "linkLabel": "Ver en Uber Eats",
+        "image": {
+          "alt": "IMG6 textura.",
+          "avif": "",
+          "webp": "",
+          "fallback": "/assets/images/img6-square.jpg"
+        }
+      }
     ]
   },
-  "capabilities": [
-    {
-      "title": "Estrategia de marca",
-      "description": "Arquitectura, tono y posicionamiento. Hacemos visible lo que ya esta latente en tu proyecto."
+  "promise": {
+    "title": "Promesa WAJIL",
+    "background": {
+      "alt": "IMG2 textura sutil.",
+      "avif": "",
+      "webp": "",
+      "fallback": "/assets/images/img2-texture.jpg"
     },
-    {
-      "title": "Identidad visual",
-      "description": "Sistemas flexibles, tipografia cuidada y paletas sobrias con acentos precisos."
-    },
-    {
-      "title": "Direccion creativa",
-      "description": "Fotografia, estilo y assets para comunicar con calma y contundencia."
+    "bullets": [
+      {
+        "title": "Ingredientes reales",
+        "copy": "Maiz, hoja y rellenos honestos. Sin atajos."
+      },
+      {
+        "title": "Ritual diario",
+        "copy": "Preparado cada manana para mantener textura y aroma."
+      },
+      {
+        "title": "Sabor limpio",
+        "copy": "Balance entre suavidad, sal y profundidad."
+      }
+    ]
+  },
+  "origin": {
+    "title": "Origen Soconusco",
+    "body": "En la region del Soconusco nace el maiz que da cuerpo a WAJIL. Cada pieza respeta el tiempo de coccion y la memoria del tamal chiapaneco.",
+    "ctaLabel": "Pedir en Uber Eats",
+    "image": {
+      "alt": "IMG4 origen Soconusco.",
+      "avif": "",
+      "webp": "",
+      "fallback": "/assets/images/img4-origin.jpg"
     }
-  ],
-  "reviews": [
-    {
-      "quote": "WAJIL convirtio nuestra vision en una marca que respira confianza.",
-      "name": "Laura C.",
-      "role": "Founder, estudio independiente"
-    },
-    {
-      "quote": "El proceso fue claro, elegante y sin ruido. El resultado es atemporal.",
-      "name": "David R.",
-      "role": "Director creativo"
-    },
-    {
-      "quote": "Nunca habiamos sentido nuestra marca tan nitida.",
-      "name": "Maria J.",
-      "role": "CMO, hospitality"
+  },
+  "reviews": {
+    "title": "Reseñas",
+    "items": [
+      { "quote": "Sabor profundo y textura impecable. Se siente artesanal.", "name": "Diana M." },
+      { "quote": "El servido es mi favorito. Calma y caracter.", "name": "Leo R." },
+      { "quote": "La masa tiene el punto exacto. Muy recomendado.", "name": "Sofia P." },
+      { "quote": "WAJIL eleva el tamal sin perder raiz.", "name": "Carlos G." }
+    ]
+  },
+  "howTo": {
+    "title": "Como pedir",
+    "ctaLabel": "Pedir en Uber Eats",
+    "steps": [
+      { "title": "Abre Uber Eats", "body": "Busca WAJIL y revisa los productos disponibles." },
+      { "title": "Elige tu estilo", "body": "Envuelto, servido o textura. Cada uno tiene su propio ritmo." },
+      { "title": "Recibe en minutos", "body": "Entrega rapida en Tuxtla Gutierrez." }
+    ],
+    "background": {
+      "alt": "IMG3 pattern emboss.",
+      "avif": "",
+      "webp": "",
+      "fallback": "/assets/images/img3-pattern.jpg"
     }
-  ],
-  "contact": {
-    "title": "Contacto",
-    "note": "Escribe con contexto y te responderemos en 48 horas.",
-    "email": "hola@wajil.com",
-    "button": {
-      "label": "Enviar correo",
-      "href": "mailto:hola@wajil.com"
-    }
+  },
+  "location": {
+    "title": "Tuxtla Gutierrez, Chiapas",
+    "uberLabel": "Uber Eats",
+    "uberHref": "https://www.ubereats.com",
+    "social": [
+      { "label": "Instagram", "href": "https://instagram.com" },
+      { "label": "TikTok", "href": "https://tiktok.com" }
+    ]
   },
   "footer": {
     "note": "WAJIL (c) 2026. Todos los derechos reservados.",
-    "links": [
-      { "label": "Privacidad", "href": "/privacy/" },
-      { "label": "Instagram", "href": "https://instagram.com" }
-    ]
+    "privacyLabel": "Privacidad",
+    "privacyHref": "/privacy/",
+    "lockup": "WAJIL"
   },
   "privacy": {
     "title": "Aviso de privacidad",

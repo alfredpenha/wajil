@@ -1,0 +1,39 @@
+---
+const { howTo, uberEats } = Astro.props;
+---
+<section class="relative overflow-hidden border-t border-fog/10 bg-ink px-6 py-16 md:px-12">
+  <div class="absolute inset-0">
+    <picture>
+      {howTo.background.avif ? <source srcset={howTo.background.avif} type="image/avif" /> : null}
+      {howTo.background.webp ? <source srcset={howTo.background.webp} type="image/webp" /> : null}
+      <img
+        class="h-full w-full object-cover opacity-10"
+        src={howTo.background.fallback}
+        alt={howTo.background.alt}
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+  </div>
+  <div class="relative mx-auto max-w-6xl">
+    <h2 class="mb-8 text-2xl font-semibold text-sand md:text-3xl">{howTo.title}</h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      {howTo.steps.map((step, index) => (
+        <div class="rounded-3xl border border-fog/15 bg-ink/80 p-6">
+          <p class="mb-3 text-xs uppercase tracking-[0.3em] text-gold">Paso {index + 1}</p>
+          <h3 class="mb-2 text-lg font-semibold text-sand">{step.title}</h3>
+          <p class="text-sm text-fog">{step.body}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-8">
+      <a
+        class="inline-flex rounded-full bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:shadow-glow"
+        href={uberEats.href}
+        data-track="click_ubereats_bottom"
+      >
+        {howTo.ctaLabel}
+      </a>
+    </div>
+  </div>
+</section>

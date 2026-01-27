@@ -1,0 +1,46 @@
+---
+const { products, uberEats } = Astro.props;
+---
+<section id="producto" class="border-t border-fog/10 px-6 py-16 md:px-12">
+  <div class="mx-auto max-w-6xl">
+    <div class="mb-10 space-y-3">
+      <h2 class="text-2xl font-semibold text-sand md:text-3xl">{products.title}</h2>
+      <p class="max-w-2xl text-sm text-fog md:text-base">{products.intro}</p>
+    </div>
+
+    <div class="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 md:grid md:grid-cols-3 md:overflow-visible">
+      {products.items.map((item) => (
+        <article class="min-w-[240px] snap-start rounded-3xl border border-fog/15 bg-ink/70 p-4 md:min-w-0">
+          <picture>
+            {item.image.avif ? <source srcset={item.image.avif} type="image/avif" /> : null}
+            {item.image.webp ? <source srcset={item.image.webp} type="image/webp" /> : null}
+            <img
+              class="aspect-square w-full rounded-2xl object-cover"
+              src={item.image.fallback}
+              alt={item.image.alt}
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <div class="mt-4 space-y-2">
+            <h3 class="text-lg font-semibold text-sand">{item.title}</h3>
+            <p class="text-sm text-fog">{item.copy}</p>
+            <a class="text-xs uppercase tracking-[0.2em] text-gold" href={uberEats.href}>
+              {item.linkLabel}
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-8">
+      <a
+        class="inline-flex rounded-full bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:shadow-glow"
+        href={uberEats.href}
+        data-track="click_ubereats_products"
+      >
+        {products.ctaLabel}
+      </a>
+    </div>
+  </div>
+</section>
