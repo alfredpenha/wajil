@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Sora:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: 8 8 8;
+  --color-gold: 196 166 71;
+  --color-sand: 244 241 232;
+  --color-fog: 156 154 146;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink text-sand font-body antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display tracking-tightest;
+}
+
+::selection {
+  background: rgb(var(--color-gold) / 0.35);
+  color: rgb(var(--color-sand));
+}

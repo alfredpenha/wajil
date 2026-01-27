@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+import site from '../content/site.json';
+
+const analyticsProvider = import.meta.env.PUBLIC_ANALYTICS_PROVIDER ?? 'plausible';
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN ?? site.meta.domain;
+const ga4Id = import.meta.env.PUBLIC_GA4_ID ?? '';
+
+const pageTitle = Astro.props.title
+  ? `${Astro.props.title} - ${site.brand.name}`
+  : site.meta.title;
+const pageDescription = Astro.props.description ?? site.meta.description;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={pageDescription} />
+    <meta name="theme-color" content="#080808" />
+    <title>{pageTitle}</title>
+    <link rel="icon" href={site.meta.favicon} />
+    <link rel="canonical" href={Astro.url} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+
+    {analyticsProvider === 'plausible' && plausibleDomain ? (
+      <script
+        defer
+        data-domain={plausibleDomain}
+        src="https://plausible.io/js/script.js"
+      ></script>
+    ) : null}
+
+    {analyticsProvider === 'ga4' && ga4Id ? (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+        <script is:inline>
+          const ga4Id = {JSON.stringify(ga4Id)};
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', ga4Id);
+        </script>
+      </>
+    ) : null}
+  </head>
+  <body class="bg-ink text-sand">
+    <slot />
+  </body>
+</html>

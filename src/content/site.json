@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "WAJIL - Marca oficial",
+    "description": "WAJIL es una marca de experiencias esenciales: identidad, ritual y presencia con un lenguaje visual sobrio y contemporaneo.",
+    "domain": "wajil.com",
+    "favicon": "/favicon.svg"
+  },
+  "brand": {
+    "name": "WAJIL",
+    "tagline": "Ritual contemporaneo para marcas con caracter.",
+    "location": "Ciudad de Mexico"
+  },
+  "labels": {
+    "capabilitiesTitle": "Capacidades",
+    "voicesTitle": "Voces",
+    "voicesEyebrow": "Resenas selectas",
+    "privacyUpdated": "Actualizado",
+    "privacyBack": "Volver al inicio"
+  },
+  "navigation": [
+    { "label": "Inicio", "href": "#inicio" },
+    { "label": "Manifiesto", "href": "#manifiesto" },
+    { "label": "Capacidades", "href": "#capacidades" },
+    { "label": "Voces", "href": "#voces" },
+    { "label": "Contacto", "href": "#contacto" }
+  ],
+  "hero": {
+    "eyebrow": "Brand landing",
+    "headline": "WAJIL disena marcas que se sienten eternas.",
+    "subhead": "Estrategia, identidad y direccion creativa para proyectos que buscan presencia y claridad sin ruido.",
+    "cta": {
+      "label": "Agenda una conversacion",
+      "href": "#contacto"
+    },
+    "secondaryCta": {
+      "label": "Ver manifiesto",
+      "href": "#manifiesto"
+    },
+    "image": {
+      "alt": "Texturas metalizadas en tonos dorados sobre fondo negro.",
+      "avif": "/assets/images/hero.avif",
+      "webp": "/assets/images/hero.webp",
+      "fallback": "/assets/images/hero.jpg"
+    }
+  },
+  "manifest": {
+    "title": "Manifiesto",
+    "body": [
+      "WAJIL trabaja con marcas que quieren serenidad, caracter y un lenguaje propio.",
+      "Nuestra metodologia se concentra en lo esencial: direccion clara, sistemas coherentes y ejecucion impecable.",
+      "Construimos presencias que resisten el tiempo y la tendencia."
+    ]
+  },
+  "capabilities": [
+    {
+      "title": "Estrategia de marca",
+      "description": "Arquitectura, tono y posicionamiento. Hacemos visible lo que ya esta latente en tu proyecto."
+    },
+    {
+      "title": "Identidad visual",
+      "description": "Sistemas flexibles, tipografia cuidada y paletas sobrias con acentos precisos."
+    },
+    {
+      "title": "Direccion creativa",
+      "description": "Fotografia, estilo y assets para comunicar con calma y contundencia."
+    }
+  ],
+  "reviews": [
+    {
+      "quote": "WAJIL convirtio nuestra vision en una marca que respira confianza.",
+      "name": "Laura C.",
+      "role": "Founder, estudio independiente"
+    },
+    {
+      "quote": "El proceso fue claro, elegante y sin ruido. El resultado es atemporal.",
+      "name": "David R.",
+      "role": "Director creativo"
+    },
+    {
+      "quote": "Nunca habiamos sentido nuestra marca tan nitida.",
+      "name": "Maria J.",
+      "role": "CMO, hospitality"
+    }
+  ],
+  "contact": {
+    "title": "Contacto",
+    "note": "Escribe con contexto y te responderemos en 48 horas.",
+    "email": "hola@wajil.com",
+    "button": {
+      "label": "Enviar correo",
+      "href": "mailto:hola@wajil.com"
+    }
+  },
+  "footer": {
+    "note": "WAJIL (c) 2026. Todos los derechos reservados.",
+    "links": [
+      { "label": "Privacidad", "href": "/privacy/" },
+      { "label": "Instagram", "href": "https://instagram.com" }
+    ]
+  },
+  "privacy": {
+    "title": "Aviso de privacidad",
+    "summary": "Informacion basica sobre como protegemos los datos.",
+    "updated": "2026-01-01",
+    "body": [
+      "WAJIL recopila unicamente los datos que compartes por correo para atender tu solicitud.",
+      "No compartimos tu informacion con terceros ni utilizamos tus datos con fines publicitarios.",
+      "Puedes solicitar la eliminacion de tus datos escribiendo a hola@wajil.com."
+    ]
+  }
+}
