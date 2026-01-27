@@ -10,9 +10,34 @@ import Reviews from '../components/sections/Reviews.astro';
 import HowTo from '../components/sections/HowTo.astro';
 import LocationFooter from '../components/sections/LocationFooter.astro';
 
-const { brand, navigation, uberEats, hero, products, promise, origin, reviews, howTo, location, footer } = site;
+const { brand, navigation, uberEats, hero, products, promise, origin, reviews, howTo, location, footer, meta } = site;
+const siteUrl = meta.url ?? `https://${meta.domain}`;
+const ogImage = meta.ogImage ?? '/assets/images/img1-hero-16x9.jpg';
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteUrl).toString();
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Restaurant',
+  name: brand.name,
+  url: siteUrl,
+  image: ogImageUrl,
+  servesCuisine: 'Mexican',
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: location.title
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Tuxtla Gutierrez',
+    addressRegion: 'Chiapas',
+    addressCountry: 'MX'
+  },
+  sameAs: location.social.map((item) => item.href)
+};
 ---
-<Base>
+<Base
+  heroPreload={{ desktop: hero.image.desktop.fallback, mobile: hero.image.mobile.fallback }}
+  jsonLd={jsonLd}
+>
   <main class="min-h-screen pb-20 md:pb-0">
     <Header brand={brand} navigation={navigation} uberEats={uberEats} />
     <Hero hero={hero} uberEats={uberEats} />

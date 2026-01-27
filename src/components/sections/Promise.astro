@@ -10,6 +10,9 @@ const { promise } = Astro.props;
         class="h-full w-full object-cover opacity-15"
         src={promise.background.fallback}
         alt={promise.background.alt}
+        width="1024"
+        height="1024"
+        aria-hidden="true"
         loading="lazy"
         decoding="async"
       />
@@ -17,7 +20,7 @@ const { promise } = Astro.props;
     <div class="absolute inset-0 bg-ink/70"></div>
   </div>
 
-  <div class="relative mx-auto max-w-6xl">
+  <div class="relative mx-auto max-w-6xl fade-up">
     <h2 class="mb-10 text-2xl font-semibold text-sand md:text-3xl">{promise.title}</h2>
     <div class="grid gap-6 md:grid-cols-3">
       {promise.bullets.map((bullet) => (

@@ -10,12 +10,15 @@ const { howTo, uberEats } = Astro.props;
         class="h-full w-full object-cover opacity-10"
         src={howTo.background.fallback}
         alt={howTo.background.alt}
+        width="1024"
+        height="1024"
+        aria-hidden="true"
         loading="lazy"
         decoding="async"
       />
     </picture>
   </div>
-  <div class="relative mx-auto max-w-6xl">
+  <div class="relative mx-auto max-w-6xl fade-up">
     <h2 class="mb-8 text-2xl font-semibold text-sand md:text-3xl">{howTo.title}</h2>
     <div class="grid gap-6 md:grid-cols-3">
       {howTo.steps.map((step, index) => (
@@ -28,7 +31,7 @@ const { howTo, uberEats } = Astro.props;
     </div>
     <div class="mt-8">
       <a
-        class="inline-flex rounded-full bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:shadow-glow"
+        class="inline-flex rounded-full bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:-translate-y-0.5 hover:shadow-glow"
         href={uberEats.href}
         data-track="click_ubereats_bottom"
       >

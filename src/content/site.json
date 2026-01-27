@@ -1,8 +1,11 @@
 {
   "meta": {
-    "title": "WAJIL - Tamales esenciales",
-    "description": "WAJIL es un tamal contemporaneo hecho en Soconusco, servido en Tuxtla Gutierrez con ingredientes reales y ritual diario.",
+    "title": "WAJIL | Tamales gourmet en Tuxtla Gutierrez, Chiapas | Soconusco",
+    "description": "Tamales gourmet en Tuxtla Gutierrez, Chiapas. Hechos en Soconusco con ingredientes reales y tecnica artesanal. Ordena WAJIL en Uber Eats.",
     "domain": "wajil.com",
+    "url": "https://wajil.com",
+    "ogImage": "/assets/images/img1-hero-16x9.jpg",
+    "ogImageAlt": "Tamal servido en plato negro.",
     "favicon": "/favicon.svg"
   },
   "brand": {
@@ -26,15 +29,15 @@
     "subcopy": "Masa suave, relleno profundo y una tecnica precisa. Hecho en Soconusco, servido fresco en Tuxtla.",
     "trust": "Entrega rapida en Uber Eats. Hecho a mano todos los dias.",
     "image": {
-      "alt": "IMG1 tamal servido en plato.",
+      "alt": "Tamal servido en plato negro sobre fondo oscuro.",
       "desktop": {
-        "avif": "",
-        "webp": "",
+        "avif": "/assets/images/img1-hero-16x9.avif",
+        "webp": "/assets/images/img1-hero-16x9.webp",
         "fallback": "/assets/images/img1-hero-16x9.jpg"
       },
       "mobile": {
-        "avif": "",
-        "webp": "",
+        "avif": "/assets/images/img1-hero-9x16.avif",
+        "webp": "/assets/images/img1-hero-9x16.webp",
         "fallback": "/assets/images/img1-hero-9x16.jpg"
       }
     }
@@ -49,9 +52,9 @@
         "copy": "El tamal tradicional con masa aireada y relleno preciso.",
         "linkLabel": "Ver en Uber Eats",
         "image": {
-          "alt": "IMG5 clasico envuelto.",
-          "avif": "",
-          "webp": "",
+          "alt": "Tamal clasico envuelto en hoja sobre plato negro.",
+          "avif": "/assets/images/img5-square.avif",
+          "webp": "/assets/images/img5-square.webp",
           "fallback": "/assets/images/img5-square.jpg"
         }
       },
@@ -60,9 +63,9 @@
         "copy": "El tamal en plato, listo para comer sin pausa.",
         "linkLabel": "Ver en Uber Eats",
         "image": {
-          "alt": "IMG1 servido recorte cuadrado.",
-          "avif": "",
-          "webp": "",
+          "alt": "Detalle de tamal servido con relleno visible.",
+          "avif": "/assets/images/img1-square.avif",
+          "webp": "/assets/images/img1-square.webp",
           "fallback": "/assets/images/img1-square.jpg"
         }
       },
@@ -71,9 +74,9 @@
         "copy": "Capas y contraste para un bocado mas complejo.",
         "linkLabel": "Ver en Uber Eats",
         "image": {
-          "alt": "IMG6 textura.",
-          "avif": "",
-          "webp": "",
+          "alt": "Detalle de tamal con textura y relleno.",
+          "avif": "/assets/images/img6-square.avif",
+          "webp": "/assets/images/img6-square.webp",
           "fallback": "/assets/images/img6-square.jpg"
         }
       }
@@ -82,9 +85,9 @@
   "promise": {
     "title": "Promesa WAJIL",
     "background": {
-      "alt": "IMG2 textura sutil.",
-      "avif": "",
-      "webp": "",
+      "alt": "",
+      "avif": "/assets/images/img2-texture.avif",
+      "webp": "/assets/images/img2-texture.webp",
       "fallback": "/assets/images/img2-texture.jpg"
     },
     "bullets": [
@@ -107,9 +110,9 @@
     "body": "En la region del Soconusco nace el maiz que da cuerpo a WAJIL. Cada pieza respeta el tiempo de coccion y la memoria del tamal chiapaneco.",
     "ctaLabel": "Pedir en Uber Eats",
     "image": {
-      "alt": "IMG4 origen Soconusco.",
-      "avif": "",
-      "webp": "",
+      "alt": "Maiz y paisaje del Soconusco al atardecer.",
+      "avif": "/assets/images/img4-origin.avif",
+      "webp": "/assets/images/img4-origin.webp",
       "fallback": "/assets/images/img4-origin.jpg"
     }
   },
@@ -131,9 +134,9 @@
       { "title": "Recibe en minutos", "body": "Entrega rapida en Tuxtla Gutierrez." }
     ],
     "background": {
-      "alt": "IMG3 pattern emboss.",
-      "avif": "",
-      "webp": "",
+      "alt": "",
+      "avif": "/assets/images/img3-pattern.avif",
+      "webp": "/assets/images/img3-pattern.webp",
       "fallback": "/assets/images/img3-pattern.jpg"
     }
   },
