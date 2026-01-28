@@ -1,17 +1,26 @@
 ---
+import { baseFromPath, buildSrcset } from '../../lib/images';
+
 const { howTo, uberEats } = Astro.props;
+const howToBase = baseFromPath(howTo.background.fallback);
+const howToWidths = [512, 768, 1024];
+const howToAvif = buildSrcset(howToBase, howToWidths, 'avif');
+const howToWebp = buildSrcset(howToBase, howToWidths, 'webp');
+const howToJpg = buildSrcset(howToBase, howToWidths, 'jpg');
 ---
 <section class="relative overflow-hidden border-t border-fog/10 bg-ink px-6 py-16 md:px-12">
   <div class="absolute inset-0">
     <picture>
-      {howTo.background.avif ? <source srcset={howTo.background.avif} type="image/avif" /> : null}
-      {howTo.background.webp ? <source srcset={howTo.background.webp} type="image/webp" /> : null}
+      <source srcset={howToAvif} sizes="100vw" type="image/avif" />
+      <source srcset={howToWebp} sizes="100vw" type="image/webp" />
       <img
         class="h-full w-full object-cover opacity-10"
         src={howTo.background.fallback}
         alt={howTo.background.alt}
         width="1024"
         height="1024"
+        srcset={howToJpg}
+        sizes="100vw"
         aria-hidden="true"
         loading="lazy"
         decoding="async"
