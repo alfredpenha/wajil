@@ -1,4 +1,5 @@
 # WAJIL Official Site (v1)
+[![Deploy to GitHub Pages](https://github.com/alfredpenha/wajil/actions/workflows/deploy.yml/badge.svg)](https://github.com/alfredpenha/wajil/actions/workflows/deploy.yml)
 
 Landing ultra ligera en Astro + TailwindCSS + TypeScript. Contenido centralizado en `src/content/site.json` y estructura lista para integrar Sanity en v2 sin reescribir componentes.
 
@@ -28,6 +29,12 @@ npm run preview
 2. Build command: `npm run build`
 3. Output directory: `dist`
 4. Variables de entorno (si aplica): ver seccion Analytics.
+
+## Deployment (GitHub Pages)
+- URL esperada: https://alfredpenha.github.io/wajil/
+- Activar Pages: Settings → Pages → Source = GitHub Actions
+- Si carga HTML pero no CSS/imagenes: revisa que `base: '/wajil/'` este configurado en `astro.config.mjs`.
+- `dist/` no se commitea; lo publica GitHub Actions.
 
 ## Analytics (Plausible preferido)
 El layout incluye el script de Plausible y un helper para eventos en `src/lib/analytics.ts`.
