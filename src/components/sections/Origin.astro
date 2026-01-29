@@ -3,7 +3,7 @@ import { baseFromPath, buildSrcset } from '../../lib/images';
 
 const { origin, uberEats } = Astro.props;
 const originBase = baseFromPath(origin.image.fallback);
-const originWidths = [640, 960, 1280, 1536];
+const originWidths = [960, 1280];
 const originAvif = buildSrcset(originBase, originWidths, 'avif');
 const originWebp = buildSrcset(originBase, originWidths, 'webp');
 const originJpg = buildSrcset(originBase, originWidths, 'jpg');

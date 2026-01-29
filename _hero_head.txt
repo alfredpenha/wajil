@@ -1,0 +1,13 @@
+---
+const { hero, uberEats } = Astro.props;
+const desktopBase = baseFromPath(hero.image.desktop.fallback);
+const mobileBase = baseFromPath(hero.image.mobile.fallback);
+const desktopWidths = [960, 1280];
+const mobileWidths = [540, 720];
+const desktopAvif = buildSrcset(desktopBase, desktopWidths, 'avif');
+const desktopWebp = buildSrcset(desktopBase, desktopWidths, 'webp');
+const desktopJpg = buildSrcset(desktopBase, desktopWidths, 'jpg');
+const mobileAvif = buildSrcset(mobileBase, mobileWidths, 'avif');
+const mobileWebp = buildSrcset(mobileBase, mobileWidths, 'webp');
+const mobileJpg = buildSrcset(mobileBase, mobileWidths, 'jpg');
+---

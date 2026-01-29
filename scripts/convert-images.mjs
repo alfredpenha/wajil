@@ -3,14 +3,14 @@ import sharp from 'sharp';
 
 const root = path.resolve('public/assets/images');
 const presets = [
-  { name: 'img1-hero-16x9', widths: [640, 960, 1280, 1536] },
-  { name: 'img1-hero-9x16', widths: [360, 540, 720, 1024] },
-  { name: 'img1-square', widths: [320, 480, 720, 1024] },
-  { name: 'img2-texture', widths: [512, 768, 1024] },
-  { name: 'img3-pattern', widths: [512, 768, 1024] },
-  { name: 'img4-origin', widths: [640, 960, 1280, 1536] },
-  { name: 'img5-square', widths: [320, 480, 720, 1024] },
-  { name: 'img6-square', widths: [320, 480, 720, 1024] }
+  { name: 'img1-hero-16x9', widths: [960, 1280] },
+  { name: 'img1-hero-9x16', widths: [540, 720] },
+  { name: 'img1-square', widths: [480, 720] },
+  { name: 'img2-texture', widths: [512] },
+  { name: 'img3-pattern', widths: [512] },
+  { name: 'img4-origin', widths: [960, 1280] },
+  { name: 'img5-square', widths: [480, 720] },
+  { name: 'img6-square', widths: [480, 720] }
 ];
 
 const formatters = [
