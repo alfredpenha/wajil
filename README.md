@@ -30,6 +30,12 @@ npm run preview
 3. Output directory: `dist`
 4. Variables de entorno (si aplica): ver seccion Analytics.
 
+## Deployment (GitHub Pages)
+- URL esperada: https://alfredpenha.github.io/wajil/
+- Activar Pages: Settings → Pages → Source = GitHub Actions
+- Si carga HTML pero no CSS/imagenes: revisa que `base: '/wajil/'` este configurado en `astro.config.mjs`.
+- `dist/` no se commitea; lo publica GitHub Actions.
+
 ## Analytics (Plausible preferido)
 El layout incluye el script de Plausible y un helper para eventos en `src/lib/analytics.ts`.
 
