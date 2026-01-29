@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import site from '../content/site.json';
+import { withBase } from '../lib/images';
 import Header from '../components/sections/Header.astro';
 import Hero from '../components/sections/Hero.astro';
 import Products from '../components/sections/Products.astro';
@@ -13,7 +14,8 @@ import LocationFooter from '../components/sections/LocationFooter.astro';
 const { brand, navigation, uberEats, hero, products, promise, origin, reviews, howTo, location, footer, meta } = site;
 const siteUrl = meta.url ?? `https://${meta.domain}`;
 const ogImage = meta.ogImage ?? '/assets/images/img1-hero-16x9.jpg';
-const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteUrl).toString();
+const ogImagePath = withBase(ogImage);
+const ogImageUrl = ogImagePath.startsWith('http') ? ogImagePath : new URL(ogImagePath, siteUrl).toString();
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Restaurant',
@@ -35,7 +37,10 @@ const jsonLd = {
 };
 ---
 <Base
-  heroPreload={{ desktop: hero.image.desktop.fallback, mobile: hero.image.mobile.fallback }}
+  heroPreload={{
+    desktop: withBase(hero.image.desktop.fallback),
+    mobile: withBase(hero.image.mobile.fallback)
+  }}
   jsonLd={jsonLd}
 >
   <main class="min-h-screen pb-20 md:pb-0">

@@ -1,5 +1,8 @@
 ---
+import { withBase } from '../../lib/images';
+
 const { brand, location, footer } = Astro.props;
+const privacyHref = withBase(footer.privacyHref);
 ---
 <section id="ubicacion" class="border-t border-fog/10 px-6 py-12 md:px-12">
   <div class="mx-auto max-w-6xl">
@@ -28,7 +31,7 @@ const { brand, location, footer } = Astro.props;
     </div>
     <div class="flex items-center gap-6">
       <span>{footer.note}</span>
-      <a class="transition hover:text-gold" href={footer.privacyHref}>{footer.privacyLabel}</a>
+      <a class="transition hover:text-gold" href={privacyHref}>{footer.privacyLabel}</a>
     </div>
   </div>
 </footer>

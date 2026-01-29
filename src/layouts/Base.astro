@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import site from '../content/site.json';
+import { withBase } from '../lib/images';
 
 const analyticsProvider = import.meta.env.PUBLIC_ANALYTICS_PROVIDER ?? 'plausible';
 const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN ?? site.meta.domain;
@@ -15,7 +16,9 @@ const pageDescription = Astro.props.description ?? site.meta.description;
 const siteUrl = site.meta.url ?? `https://${site.meta.domain}`;
 const ogImage = site.meta.ogImage ?? '/assets/images/img1-hero-16x9.jpg';
 const ogImageAlt = site.meta.ogImageAlt ?? site.brand.name;
-const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteUrl).toString();
+const ogImagePath = withBase(ogImage);
+const ogImageUrl = ogImagePath.startsWith('http') ? ogImagePath : new URL(ogImagePath, siteUrl).toString();
+const favicon = withBase(site.meta.favicon);
 ---
 <!doctype html>
 <html lang="es">
@@ -25,7 +28,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteU
     <meta name="description" content={pageDescription} />
     <meta name="theme-color" content="#080808" />
     <title>{pageTitle}</title>
-    <link rel="icon" href={site.meta.favicon} />
+    <link rel="icon" href={favicon} />
     <link rel="canonical" href={Astro.url} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

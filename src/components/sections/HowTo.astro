@@ -1,5 +1,5 @@
 ---
-import { baseFromPath, buildSrcset } from '../../lib/images';
+import { baseFromPath, buildSrcset, withBase } from '../../lib/images';
 
 const { howTo, uberEats } = Astro.props;
 const howToBase = baseFromPath(howTo.background.fallback);
@@ -7,6 +7,7 @@ const howToWidths = [512];
 const howToAvif = buildSrcset(howToBase, howToWidths, 'avif');
 const howToWebp = buildSrcset(howToBase, howToWidths, 'webp');
 const howToJpg = buildSrcset(howToBase, howToWidths, 'jpg');
+const howToFallback = withBase(howTo.background.fallback);
 ---
 <section class="relative overflow-hidden border-t border-fog/10 bg-ink px-6 py-16 md:px-12">
   <div class="absolute inset-0">
@@ -15,7 +16,7 @@ const howToJpg = buildSrcset(howToBase, howToWidths, 'jpg');
       <source srcset={howToWebp} sizes="100vw" type="image/webp" />
       <img
         class="h-full w-full object-cover opacity-10"
-        src={howTo.background.fallback}
+        src={howToFallback}
         alt={howTo.background.alt}
         width="1024"
         height="1024"

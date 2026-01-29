@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import site from '../content/site.json';
+import { withBase } from '../lib/images';
 
 const { privacy } = site;
 ---
@@ -17,7 +18,7 @@ const { privacy } = site;
           <p>{paragraph}</p>
         ))}
       </section>
-      <a class="text-xs uppercase tracking-[0.3em] text-gold" href="/">
+      <a class="text-xs uppercase tracking-[0.3em] text-gold" href={withBase('/')}>
         Volver al inicio
       </a>
     </div>

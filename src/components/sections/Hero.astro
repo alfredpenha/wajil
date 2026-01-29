@@ -1,5 +1,5 @@
 ---
-import { baseFromPath, buildSrcset } from '../../lib/images';
+import { baseFromPath, buildSrcset, withBase } from '../../lib/images';
 
 const { hero, uberEats } = Astro.props;
 const desktopBase = baseFromPath(hero.image.desktop.fallback);
@@ -12,6 +12,7 @@ const desktopJpg = buildSrcset(desktopBase, desktopWidths, 'jpg');
 const mobileAvif = buildSrcset(mobileBase, mobileWidths, 'avif');
 const mobileWebp = buildSrcset(mobileBase, mobileWidths, 'webp');
 const mobileJpg = buildSrcset(mobileBase, mobileWidths, 'jpg');
+const mobileFallback = withBase(hero.image.mobile.fallback ?? hero.image.desktop.fallback);
 ---
 <section id="inicio" class="px-6 pb-10 pt-8 md:px-12 md:pb-20">
   <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.05fr_0.95fr]">
@@ -59,7 +60,7 @@ const mobileJpg = buildSrcset(mobileBase, mobileWidths, 'jpg');
         <source srcset={mobileJpg} sizes="100vw" type="image/jpeg" />
         <img
           class="aspect-[9/16] w-full max-h-[70vh] rounded-[32px] border border-fog/15 object-cover md:aspect-[16/9] md:max-h-none"
-          src={hero.image.mobile.fallback ?? hero.image.desktop.fallback}
+          src={mobileFallback}
           alt={hero.image.alt}
           width="1024"
           height="1536"

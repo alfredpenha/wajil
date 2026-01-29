@@ -1,5 +1,5 @@
 ---
-import { baseFromPath, buildSrcset } from '../../lib/images';
+import { baseFromPath, buildSrcset, withBase } from '../../lib/images';
 
 const { origin, uberEats } = Astro.props;
 const originBase = baseFromPath(origin.image.fallback);
@@ -7,6 +7,7 @@ const originWidths = [960, 1280];
 const originAvif = buildSrcset(originBase, originWidths, 'avif');
 const originWebp = buildSrcset(originBase, originWidths, 'webp');
 const originJpg = buildSrcset(originBase, originWidths, 'jpg');
+const originFallback = withBase(origin.image.fallback);
 ---
 <section id="origen" class="relative overflow-hidden border-t border-fog/10 px-6 py-16 md:px-12">
   <picture>
@@ -14,7 +15,7 @@ const originJpg = buildSrcset(originBase, originWidths, 'jpg');
     <source srcset={originWebp} sizes="100vw" type="image/webp" />
     <img
       class="absolute inset-0 h-full w-full object-cover"
-      src={origin.image.fallback}
+      src={originFallback}
       alt={origin.image.alt}
       width="1536"
       height="1024"

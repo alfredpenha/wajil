@@ -1,5 +1,5 @@
 ---
-import { baseFromPath, buildSrcset } from '../../lib/images';
+import { baseFromPath, buildSrcset, withBase } from '../../lib/images';
 
 const { products, uberEats } = Astro.props;
 const productWidths = [480, 720];
@@ -17,6 +17,7 @@ const productWidths = [480, 720];
         const avif = buildSrcset(base, productWidths, 'avif');
         const webp = buildSrcset(base, productWidths, 'webp');
         const jpg = buildSrcset(base, productWidths, 'jpg');
+        const fallback = withBase(item.image.fallback);
         return (
         <article class="min-w-[240px] snap-start rounded-3xl border border-fog/15 bg-ink/70 p-4 md:min-w-0">
           <picture>
@@ -24,7 +25,7 @@ const productWidths = [480, 720];
             <source srcset={webp} sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 70vw" type="image/webp" />
             <img
               class="aspect-square w-full rounded-2xl object-cover"
-              src={item.image.fallback}
+              src={fallback}
               alt={item.image.alt}
               width="1024"
               height="1024"
