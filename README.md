@@ -1,4 +1,5 @@
 # WAJIL Official Site (v1)
+[![Deploy to GitHub Pages](https://github.com/alfredpenha/wajil/actions/workflows/deploy.yml/badge.svg)](https://github.com/alfredpenha/wajil/actions/workflows/deploy.yml)
 
 Landing ultra ligera en Astro + TailwindCSS + TypeScript. Contenido centralizado en `src/content/site.json` y estructura lista para integrar Sanity en v2 sin reescribir componentes.
 
