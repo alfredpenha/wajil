@@ -59,7 +59,7 @@ const mobileFallback = withBase(hero.image.mobile.fallback ?? hero.image.desktop
         <source srcset={mobileWebp} sizes="100vw" type="image/webp" />
         <source srcset={mobileJpg} sizes="100vw" type="image/jpeg" />
         <img
-          class="aspect-[9/16] w-full max-h-[70vh] rounded-3xl border border-fog/15 object-cover md:aspect-[16/9] md:max-h-none"
+          class="aspect-[9/16] w-full max-h-[60vh] rounded-3xl border border-fog/15 object-cover object-[50%_75%] md:aspect-[16/9] md:max-h-none md:object-center"
           src={mobileFallback}
           alt={hero.image.alt}
           width="1024"

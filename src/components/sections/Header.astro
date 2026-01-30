@@ -21,7 +21,10 @@ const { brand, navigation, uberEats } = Astro.props;
   </div>
 </header>
 
-<div class="fixed bottom-0 left-0 right-0 z-50 border-t border-fog/15 bg-ink/95 px-6 py-3 backdrop-blur md:hidden">
+<div
+  class="sticky-cta fixed bottom-0 left-0 right-0 z-50 translate-y-full border-t border-fog/15 bg-ink/95 px-6 py-3 pb-[env(safe-area-inset-bottom)] opacity-0 transition-transform duration-300 transition-opacity backdrop-blur md:hidden"
+  data-sticky-cta
+>
   <a
     class="btn-gold w-full"
     href={uberEats.href}
@@ -30,3 +33,44 @@ const { brand, navigation, uberEats } = Astro.props;
     {uberEats.label}
   </a>
 </div>
+
+<script is:inline>
+  const initSticky = () => {
+    const sticky = document.querySelector('[data-sticky-cta]');
+    const hero = document.querySelector('#inicio');
+
+    const showSticky = () => {
+      if (!sticky) return;
+      sticky.classList.remove('translate-y-full', 'opacity-0');
+      sticky.classList.add('translate-y-0', 'opacity-100');
+    };
+
+    const hideSticky = () => {
+      if (!sticky) return;
+      sticky.classList.add('translate-y-full', 'opacity-0');
+      sticky.classList.remove('translate-y-0', 'opacity-100');
+    };
+
+    if (sticky && hero && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            hideSticky();
+          } else {
+            showSticky();
+          }
+        },
+        { threshold: 0.2 }
+      );
+      observer.observe(hero);
+    } else if (sticky) {
+      showSticky();
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSticky);
+  } else {
+    initSticky();
+  }
+</script>

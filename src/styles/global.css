@@ -13,6 +13,7 @@
   --color-gold: 196 166 71;
   --color-sand: 244 241 232;
   --color-fog: 156 154 146;
+  --sticky-cta-height: 72px;
 }
 
 html {
@@ -25,6 +26,12 @@ body {
   background-image:
     radial-gradient(1200px circle at 10% -10%, rgba(196, 166, 71, 0.12), transparent 45%),
     radial-gradient(900px circle at 90% 10%, rgba(255, 255, 255, 0.06), transparent 40%);
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-bottom: calc(var(--sticky-cta-height) + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 h1, h2, h3, h4 {
