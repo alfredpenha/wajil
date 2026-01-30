@@ -1,4 +1,5 @@
 ---
+import { AnalyticsEvents } from '../../lib/analytics';
 import { baseFromPath, buildSrcset, withBase } from '../../lib/images';
 
 const { origin, uberEats } = Astro.props;
@@ -35,7 +36,8 @@ const originFallback = withBase(origin.image.fallback);
       <a
         class="btn-gold"
         href={uberEats.href}
-        data-track="click_ubereats_origin"
+        data-track={AnalyticsEvents.uberEatsOrigin}
+        aria-label={`${origin.ctaLabel} - Origen`}
       >
         {origin.ctaLabel}
       </a>

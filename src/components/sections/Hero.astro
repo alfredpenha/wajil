@@ -1,4 +1,5 @@
 ---
+import { AnalyticsEvents } from '../../lib/analytics';
 import { baseFromPath, buildSrcset, withBase } from '../../lib/images';
 
 const { hero, uberEats } = Astro.props;
@@ -27,7 +28,8 @@ const mobileFallback = withBase(hero.image.mobile.fallback ?? hero.image.desktop
         <a
           class="btn-gold"
           href={uberEats.href}
-          data-track="click_ubereats_hero"
+          data-track={AnalyticsEvents.uberEatsHero}
+          aria-label={`${uberEats.label} - Hero`}
         >
           {uberEats.label}
         </a>

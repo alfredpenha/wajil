@@ -1,4 +1,6 @@
 ---
+import { AnalyticsEvents } from '../../lib/analytics';
+
 const { brand, navigation, uberEats } = Astro.props;
 ---
 <header class="sticky top-0 z-50 border-b border-fog/10 bg-ink/85 backdrop-blur">
@@ -14,7 +16,8 @@ const { brand, navigation, uberEats } = Astro.props;
     <a
       class="btn-gold hidden text-[10px] md:inline-flex"
       href={uberEats.href}
-      data-track="click_ubereats_header"
+      data-track={AnalyticsEvents.uberEatsHeader}
+      aria-label={`${uberEats.label} - Header`}
     >
       {uberEats.label}
     </a>
@@ -28,7 +31,8 @@ const { brand, navigation, uberEats } = Astro.props;
   <a
     class="btn-gold w-full"
     href={uberEats.href}
-    data-track="click_ubereats_bottom"
+    data-track={AnalyticsEvents.uberEatsBottom}
+    aria-label={`${uberEats.label} - Sticky`}
   >
     {uberEats.label}
   </a>

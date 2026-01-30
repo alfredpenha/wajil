@@ -1,4 +1,5 @@
 ---
+import { AnalyticsEvents } from '../../lib/analytics';
 import { baseFromPath, buildSrcset, withBase } from '../../lib/images';
 
 const { howTo, uberEats } = Astro.props;
@@ -43,7 +44,8 @@ const howToFallback = withBase(howTo.background.fallback);
       <a
         class="btn-gold w-full gap-2 sm:w-auto"
         href={uberEats.href}
-        data-track="click_ubereats_bottom"
+        data-track={AnalyticsEvents.uberEatsBottom}
+        aria-label={`${howTo.ctaLabel} - Como pedir`}
       >
         {howTo.ctaLabel}
         <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">

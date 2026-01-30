@@ -1,12 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
-import site from '../content/site.json';
+import { site } from '../content/site';
 import { withBase } from '../lib/images';
 
 const { privacy } = site;
 ---
 <Base title={privacy.title} description={privacy.summary}>
-  <main class="px-6 py-16 md:px-12">
+  <main id="contenido" class="px-6 py-16 md:px-12">
     <div class="mx-auto max-w-3xl space-y-8">
       <header class="space-y-4">
         <p class="text-xs uppercase tracking-[0.3em] text-fog">Actualizado {privacy.updated}</p>

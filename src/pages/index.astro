@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import site from '../content/site.json';
+import { site } from '../content/site';
 import { withBase } from '../lib/images';
 import Header from '../components/sections/Header.astro';
 import Hero from '../components/sections/Hero.astro';
@@ -43,7 +43,7 @@ const jsonLd = {
   }}
   jsonLd={jsonLd}
 >
-  <main class="min-h-screen pb-20 md:pb-0">
+  <main id="contenido" class="min-h-screen pb-20 md:pb-0">
     <Header brand={brand} navigation={navigation} uberEats={uberEats} />
     <Hero hero={hero} uberEats={uberEats} />
     <Products products={products} uberEats={uberEats} />

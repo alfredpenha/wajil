@@ -8,6 +8,25 @@
   }
 }
 
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0.75rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: rgb(var(--color-gold));
+  color: rgb(var(--color-ink));
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.skip-link:focus {
+  left: 0.75rem;
+}
+
 :root {
   --color-ink: 8 8 8;
   --color-gold: 196 166 71;
