@@ -34,13 +34,8 @@ const promiseFallback = withBase(promise.background.fallback);
     <h2 class="mb-10 text-2xl font-semibold text-sand md:text-3xl">{promise.title}</h2>
     <div class="grid gap-6 md:grid-cols-3">
       {promise.bullets.map((bullet) => (
-        <div class="rounded-3xl border border-fog/15 bg-ink/60 p-6">
-          <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full border border-gold/40">
-            <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M4 12h16" />
-              <path d="M12 4v16" />
-            </svg>
-          </div>
+        <div class="rounded-3xl border border-fog/15 bg-ink/60 p-6 shadow-soft">
+          <span class="mb-4 inline-flex h-2.5 w-2.5 rounded-full bg-gold/80"></span>
           <h3 class="mb-2 text-lg font-semibold text-sand">{bullet.title}</h3>
           <p class="text-sm text-fog">{bullet.copy}</p>
         </div>

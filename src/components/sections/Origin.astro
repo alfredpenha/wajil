@@ -25,14 +25,15 @@ const originFallback = withBase(origin.image.fallback);
       decoding="async"
     />
   </picture>
-  <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-transparent"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-transparent"></div>
+  <div class="absolute inset-0 bg-ink/10 mix-blend-multiply"></div>
 
   <div class="relative mx-auto max-w-6xl fade-up">
-    <div class="max-w-xl space-y-5 rounded-3xl border border-fog/15 bg-ink/70 p-8">
+    <div class="max-w-xl space-y-5 rounded-3xl border border-fog/15 bg-ink/55 p-8 shadow-soft backdrop-blur-[2px]">
       <h2 class="text-2xl font-semibold text-sand md:text-3xl">{origin.title}</h2>
       <p class="text-sm leading-relaxed text-fog md:text-base">{origin.body}</p>
       <a
-        class="inline-flex rounded-full bg-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:-translate-y-0.5 hover:shadow-glow"
+        class="btn-gold"
         href={uberEats.href}
         data-track="click_ubereats_origin"
       >

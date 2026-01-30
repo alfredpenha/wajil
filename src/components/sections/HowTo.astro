@@ -32,20 +32,24 @@ const howToFallback = withBase(howTo.background.fallback);
     <h2 class="mb-8 text-2xl font-semibold text-sand md:text-3xl">{howTo.title}</h2>
     <div class="grid gap-6 md:grid-cols-3">
       {howTo.steps.map((step, index) => (
-        <div class="rounded-3xl border border-fog/15 bg-ink/80 p-6">
+        <div class="rounded-3xl border border-fog/15 bg-ink/80 p-6 shadow-soft">
           <p class="mb-3 text-xs uppercase tracking-[0.3em] text-gold">Paso {index + 1}</p>
           <h3 class="mb-2 text-lg font-semibold text-sand">{step.title}</h3>
           <p class="text-sm text-fog">{step.body}</p>
         </div>
       ))}
     </div>
-    <div class="mt-8">
+    <div class="mt-10 flex justify-center">
       <a
-        class="inline-flex rounded-full bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:-translate-y-0.5 hover:shadow-glow"
+        class="btn-gold w-full gap-2 sm:w-auto"
         href={uberEats.href}
         data-track="click_ubereats_bottom"
       >
         {howTo.ctaLabel}
+        <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 11L11 5" />
+          <path d="M6 5h5v5" />
+        </svg>
       </a>
     </div>
   </div>

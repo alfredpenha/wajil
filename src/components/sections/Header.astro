@@ -6,13 +6,13 @@ const { brand, navigation, uberEats } = Astro.props;
     <a href="#inicio" class="text-sm font-semibold tracking-[0.4em] text-gold transition hover:text-sand">
       {brand.logo}
     </a>
-    <nav class="hidden items-center gap-6 text-xs uppercase tracking-[0.2em] text-fog md:flex" aria-label="Secciones">
+    <nav class="hidden items-center gap-6 text-sm uppercase tracking-[0.12em] text-sand/70 md:flex" aria-label="Secciones">
       {navigation.map((item) => (
           <a class="transition hover:text-gold" href={item.href}>{item.label}</a>
         ))}
       </nav>
     <a
-      class="hidden rounded-full bg-gold px-5 py-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-ink transition hover:-translate-y-0.5 hover:shadow-glow md:inline-flex"
+      class="btn-gold hidden text-[10px] md:inline-flex"
       href={uberEats.href}
       data-track="click_ubereats_header"
     >
@@ -23,7 +23,7 @@ const { brand, navigation, uberEats } = Astro.props;
 
 <div class="fixed bottom-0 left-0 right-0 z-50 border-t border-fog/15 bg-ink/95 px-6 py-3 backdrop-blur md:hidden">
   <a
-    class="flex items-center justify-center rounded-full bg-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:-translate-y-0.5 hover:shadow-glow"
+    class="btn-gold w-full"
     href={uberEats.href}
     data-track="click_ubereats_bottom"
   >
