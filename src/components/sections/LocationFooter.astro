@@ -4,12 +4,12 @@ import { withBase } from '../../lib/images';
 const { brand, location, footer } = Astro.props;
 const privacyHref = withBase(footer.privacyHref);
 ---
-<section id="ubicacion" class="border-t border-fog/10 px-6 py-12 md:px-12">
-  <div class="mx-auto max-w-6xl">
+<section id="ubicacion" class="section-x border-t border-fog/10 py-12">
+  <div class="section-inner">
     <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between fade-up">
       <div class="space-y-2">
-        <p class="text-xs uppercase tracking-[0.3em] text-fog">Ubicacion</p>
-        <h2 class="text-2xl font-semibold text-sand md:text-3xl">{location.title}</h2>
+        <p class="text-xs uppercase tracking-[0.3em] text-fog">{location.kicker}</p>
+        <h2 class="section-title">{location.title}</h2>
         <a class="text-xs uppercase tracking-[0.3em] text-gold" href={location.uberHref}>
           {location.uberLabel}
         </a>
@@ -23,8 +23,8 @@ const privacyHref = withBase(footer.privacyHref);
   </div>
 </section>
 
-<footer class="border-t border-fog/10 px-6 py-8 md:px-12">
-  <div class="mx-auto flex max-w-6xl flex-col gap-6 text-xs uppercase tracking-[0.2em] text-fog md:flex-row md:items-center md:justify-between">
+<footer class="section-x border-t border-fog/10 py-8">
+  <div class="section-inner flex flex-col gap-6 text-xs uppercase tracking-[0.2em] text-fog md:flex-row md:items-center md:justify-between">
     <div class="flex flex-col gap-2">
       <div class="flex items-center gap-3 text-gold">
         <span class="text-sm font-semibold tracking-[0.4em]">{footer.lockup}</span>

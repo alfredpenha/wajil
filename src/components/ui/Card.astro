@@ -1,0 +1,10 @@
+---
+const { as = 'div', class: className = '' } = Astro.props;
+const Tag = as;
+const classes = ['rounded-card border border-fog/15 shadow-soft', className]
+  .filter(Boolean)
+  .join(' ');
+---
+<Tag class={classes}>
+  <slot />
+</Tag>

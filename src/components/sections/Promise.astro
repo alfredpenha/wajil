@@ -1,5 +1,6 @@
 ---
 import { baseFromPath, buildSrcset, withBase } from '../../lib/images';
+import Card from '../ui/Card.astro';
 
 const { promise } = Astro.props;
 const promiseBase = baseFromPath(promise.background.fallback);
@@ -9,7 +10,7 @@ const promiseWebp = buildSrcset(promiseBase, promiseWidths, 'webp');
 const promiseJpg = buildSrcset(promiseBase, promiseWidths, 'jpg');
 const promiseFallback = withBase(promise.background.fallback);
 ---
-<section class="relative overflow-hidden border-t border-fog/10 px-6 py-16 md:px-12">
+<section class="section-x relative overflow-hidden border-t border-fog/10 py-16">
   <div class="absolute inset-0">
     <picture>
       <source srcset={promiseAvif} sizes="100vw" type="image/avif" />
@@ -30,15 +31,15 @@ const promiseFallback = withBase(promise.background.fallback);
     <div class="absolute inset-0 bg-ink/70"></div>
   </div>
 
-  <div class="relative mx-auto max-w-6xl fade-up">
-    <h2 class="mb-10 text-2xl font-semibold text-sand md:text-3xl">{promise.title}</h2>
+  <div class="section-inner fade-up">
+    <h2 class="section-title mb-10">{promise.title}</h2>
     <div class="grid gap-6 md:grid-cols-3">
       {promise.bullets.map((bullet) => (
-        <div class="rounded-3xl border border-fog/15 bg-ink/60 p-6 shadow-soft">
+        <Card class="bg-ink/60 p-6">
           <span class="mb-4 inline-flex h-2.5 w-2.5 rounded-full bg-gold/80"></span>
           <h3 class="mb-2 text-lg font-semibold text-sand">{bullet.title}</h3>
           <p class="text-sm text-fog">{bullet.copy}</p>
-        </div>
+        </Card>
       ))}
     </div>
   </div>

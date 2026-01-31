@@ -20,6 +20,9 @@ module.exports = {
       boxShadow: {
         glow: '0 0 60px rgba(196, 166, 71, 0.18)',
         soft: '0 18px 40px rgba(0, 0, 0, 0.28)'
+      },
+      borderRadius: {
+        card: '1.5rem'
       }
     }
   },

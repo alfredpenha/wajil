@@ -1,10 +1,11 @@
 ---
 import { AnalyticsEvents } from '../../lib/analytics';
+import ButtonGold from '../ui/ButtonGold.astro';
 
 const { brand, navigation, uberEats } = Astro.props;
 ---
 <header class="sticky top-0 z-50 border-b border-fog/10 bg-ink/85 backdrop-blur">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-12">
+  <div class="section-inner section-x flex items-center justify-between py-4">
     <a href="#inicio" class="text-sm font-semibold tracking-[0.4em] text-gold transition hover:text-sand">
       {brand.logo}
     </a>
@@ -13,14 +14,14 @@ const { brand, navigation, uberEats } = Astro.props;
           <a class="transition hover:text-gold" href={item.href}>{item.label}</a>
         ))}
       </nav>
-    <a
-      class="btn-gold hidden text-[10px] md:inline-flex"
+    <ButtonGold
+      class="hidden text-[10px] md:inline-flex"
       href={uberEats.href}
-      data-track={AnalyticsEvents.uberEatsHeader}
-      aria-label={`${uberEats.label} - Header`}
+      dataTrack={AnalyticsEvents.uberEatsHeader}
+      ariaLabel={`${uberEats.label} - Header`}
     >
       {uberEats.label}
-    </a>
+    </ButtonGold>
   </div>
 </header>
 
@@ -28,14 +29,14 @@ const { brand, navigation, uberEats } = Astro.props;
   class="sticky-cta fixed bottom-0 left-0 right-0 z-50 translate-y-full border-t border-fog/15 bg-ink/95 px-6 py-3 pb-[env(safe-area-inset-bottom)] opacity-0 transition-transform duration-300 transition-opacity backdrop-blur md:hidden"
   data-sticky-cta
 >
-  <a
-    class="btn-gold w-full"
+  <ButtonGold
+    fullWidth
     href={uberEats.href}
-    data-track={AnalyticsEvents.uberEatsBottom}
-    aria-label={`${uberEats.label} - Sticky`}
+    dataTrack={AnalyticsEvents.uberEatsBottom}
+    ariaLabel={`${uberEats.label} - Sticky`}
   >
     {uberEats.label}
-  </a>
+  </ButtonGold>
 </div>
 
 <script is:inline>

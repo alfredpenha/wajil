@@ -1,6 +1,7 @@
 ---
 import { AnalyticsEvents } from '../../lib/analytics';
 import { baseFromPath, buildSrcset, withBase } from '../../lib/images';
+import ButtonGold from '../ui/ButtonGold.astro';
 
 const { hero, uberEats } = Astro.props;
 const desktopBase = baseFromPath(hero.image.desktop.fallback);
@@ -15,8 +16,8 @@ const mobileWebp = buildSrcset(mobileBase, mobileWidths, 'webp');
 const mobileJpg = buildSrcset(mobileBase, mobileWidths, 'jpg');
 const mobileFallback = withBase(hero.image.mobile.fallback ?? hero.image.desktop.fallback);
 ---
-<section id="inicio" class="px-6 pb-10 pt-8 md:px-12 md:pb-20">
-  <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.05fr_0.95fr]">
+<section id="inicio" class="section-x pb-10 pt-8 md:pb-20">
+  <div class="section-inner grid items-center gap-10 md:grid-cols-[1.05fr_0.95fr]">
     <div class="space-y-6 fade-up">
       <h1 class="balance-text text-4xl font-semibold leading-tight text-sand md:text-6xl">
         {hero.title}
@@ -25,19 +26,18 @@ const mobileFallback = withBase(hero.image.mobile.fallback ?? hero.image.desktop
         {hero.subcopy}
       </p>
       <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-        <a
-          class="btn-gold"
+        <ButtonGold
           href={uberEats.href}
-          data-track={AnalyticsEvents.uberEatsHero}
-          aria-label={`${uberEats.label} - Hero`}
+          dataTrack={AnalyticsEvents.uberEatsHero}
+          ariaLabel={`${uberEats.label} - Hero`}
         >
           {uberEats.label}
-        </a>
+        </ButtonGold>
         <span class="text-xs uppercase tracking-[0.25em] text-fog">{hero.trust}</span>
       </div>
     </div>
     <div class="relative fade-up-slow">
-      <div class="absolute inset-0 rounded-3xl bg-gradient-to-t from-ink/80 via-ink/30 to-transparent md:hidden"></div>
+      <div class="absolute inset-0 rounded-card bg-gradient-to-t from-ink/80 via-ink/30 to-transparent md:hidden"></div>
       <picture>
         <source
           media="(min-width: 768px)"
@@ -61,7 +61,7 @@ const mobileFallback = withBase(hero.image.mobile.fallback ?? hero.image.desktop
         <source srcset={mobileWebp} sizes="100vw" type="image/webp" />
         <source srcset={mobileJpg} sizes="100vw" type="image/jpeg" />
         <img
-          class="aspect-[9/16] w-full max-h-[60vh] rounded-3xl border border-fog/15 object-cover object-[50%_75%] md:aspect-[16/9] md:max-h-none md:object-center"
+          class="aspect-[9/16] w-full max-h-[60vh] rounded-card border border-fog/15 object-cover object-[50%_75%] md:aspect-[16/9] md:max-h-none md:object-center"
           src={mobileFallback}
           alt={hero.image.alt}
           width="1024"

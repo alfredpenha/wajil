@@ -1,6 +1,8 @@
 ---
 import { AnalyticsEvents } from '../../lib/analytics';
 import { baseFromPath, buildSrcset, withBase } from '../../lib/images';
+import ButtonGold from '../ui/ButtonGold.astro';
+import Card from '../ui/Card.astro';
 
 const { howTo, uberEats } = Astro.props;
 const howToBase = baseFromPath(howTo.background.fallback);
@@ -10,7 +12,7 @@ const howToWebp = buildSrcset(howToBase, howToWidths, 'webp');
 const howToJpg = buildSrcset(howToBase, howToWidths, 'jpg');
 const howToFallback = withBase(howTo.background.fallback);
 ---
-<section class="relative overflow-hidden border-t border-fog/10 bg-ink px-6 py-16 md:px-12">
+<section class="section-x relative overflow-hidden border-t border-fog/10 bg-ink py-16">
   <div class="absolute inset-0">
     <picture>
       <source srcset={howToAvif} sizes="100vw" type="image/avif" />
@@ -29,30 +31,30 @@ const howToFallback = withBase(howTo.background.fallback);
       />
     </picture>
   </div>
-  <div class="relative mx-auto max-w-6xl fade-up">
-    <h2 class="mb-8 text-2xl font-semibold text-sand md:text-3xl">{howTo.title}</h2>
+  <div class="section-inner relative fade-up">
+    <h2 class="section-title mb-8">{howTo.title}</h2>
     <div class="grid gap-6 md:grid-cols-3">
       {howTo.steps.map((step, index) => (
-        <div class="rounded-3xl border border-fog/15 bg-ink/80 p-6 shadow-soft">
-          <p class="mb-3 text-xs uppercase tracking-[0.3em] text-gold">Paso {index + 1}</p>
+        <Card class="bg-ink/80 p-6">
+          <p class="mb-3 text-xs uppercase tracking-[0.3em] text-gold">
+            {howTo.stepLabel} {index + 1}
+          </p>
           <h3 class="mb-2 text-lg font-semibold text-sand">{step.title}</h3>
           <p class="text-sm text-fog">{step.body}</p>
-        </div>
+        </Card>
       ))}
     </div>
     <div class="mt-10 flex justify-center">
-      <a
-        class="btn-gold w-full gap-2 sm:w-auto"
+      <ButtonGold
+        fullWidth
+        class="gap-2 sm:w-auto"
         href={uberEats.href}
-        data-track={AnalyticsEvents.uberEatsBottom}
-        aria-label={`${howTo.ctaLabel} - Como pedir`}
+        dataTrack={AnalyticsEvents.uberEatsBottom}
+        ariaLabel={`${howTo.ctaLabel} - Como pedir`}
+        icon
       >
         {howTo.ctaLabel}
-        <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M5 11L11 5" />
-          <path d="M6 5h5v5" />
-        </svg>
-      </a>
+      </ButtonGold>
     </div>
   </div>
 </section>

@@ -87,6 +87,7 @@ export const SiteSchema = z.object({
   }),
   howTo: z.object({
     title: z.string(),
+    stepLabel: z.string(),
     ctaLabel: z.string(),
     steps: z.array(
       z.object({
@@ -97,6 +98,7 @@ export const SiteSchema = z.object({
     background: ImageWithAltSchema
   }),
   location: z.object({
+    kicker: z.string(),
     title: z.string(),
     uberLabel: z.string(),
     uberHref: z.string(),

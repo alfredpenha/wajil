@@ -6,7 +6,7 @@
     "url": "https://wajil.com",
     "ogImage": "/assets/images/img1-hero-16x9.jpg",
     "ogImageAlt": "Tamal servido en plato negro.",
-    "favicon": "/favicon.ico"
+    "favicon": "favicon.ico"
   },
   "brand": {
     "name": "WAJIL",
@@ -127,6 +127,7 @@
   },
   "howTo": {
     "title": "Como pedir",
+    "stepLabel": "Paso",
     "ctaLabel": "Abrir Uber Eats",
     "steps": [
       { "title": "Abre Uber Eats", "body": "Busca WAJIL y revisa los productos disponibles." },
@@ -141,6 +142,7 @@
     }
   },
   "location": {
+    "kicker": "Ubicacion",
     "title": "Tuxtla Gutierrez, Chiapas",
     "uberLabel": "Uber Eats",
     "uberHref": "https://www.ubereats.com",

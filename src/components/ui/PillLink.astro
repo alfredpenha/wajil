@@ -1,0 +1,16 @@
+---
+const { href, class: className = '', ariaLabel } = Astro.props;
+const classes = [
+  'inline-flex items-center gap-2 self-start rounded-full border border-gold/40 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-gold transition hover:border-gold hover:bg-gold/10 hover:text-sand',
+  className
+]
+  .filter(Boolean)
+  .join(' ');
+---
+<a href={href} class={classes} aria-label={ariaLabel}>
+  <slot />
+  <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M5 11L11 5" />
+    <path d="M6 5h5v5" />
+  </svg>
+</a>
