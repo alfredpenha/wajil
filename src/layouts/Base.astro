@@ -2,10 +2,10 @@
 import '../styles/global.css';
 import { site } from '../content/site';
 import { withBase } from '../lib/images';
+import { resolveAnalyticsConfig } from '../lib/analytics-config';
+import AnalyticsProvider from '../components/analytics/AnalyticsProvider.astro';
 
-const analyticsProvider = import.meta.env.PUBLIC_ANALYTICS_PROVIDER ?? 'plausible';
-const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN ?? site.meta.domain;
-const ga4Id = import.meta.env.PUBLIC_GA4_ID ?? '';
+const analyticsConfig = resolveAnalyticsConfig(site.meta.domain);
 const heroPreload = Astro.props.heroPreload ?? null;
 const jsonLd = Astro.props.jsonLd ?? null;
 
@@ -60,28 +60,11 @@ const favicon = withBase(site.meta.favicon);
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     ) : null}
 
-    {analyticsProvider === 'plausible' && plausibleDomain ? (
-      <script
-        defer
-        data-domain={plausibleDomain}
-        src="https://plausible.io/js/script.js"
-      ></script>
-    ) : null}
-
-    {analyticsProvider === 'ga4' && ga4Id ? (
-      <>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
-        <script is:inline define:vars={{ ga4Id }}>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', ga4Id);
-        </script>
-      </>
-    ) : null}
+    <AnalyticsProvider placement="head" config={analyticsConfig} />
   </head>
   <body class="bg-ink text-sand">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <AnalyticsProvider placement="body" config={analyticsConfig} />
     <slot />
   </body>
 </html>

@@ -1,4 +1,4 @@
-export type AnalyticsProvider = 'plausible' | 'ga4' | 'none';
+import { analyticsConfig, type AnalyticsProvider } from './analytics-config';
 
 export const AnalyticsEvents = {
   uberEatsHeader: 'click_ubereats_header',
@@ -10,28 +10,40 @@ export const AnalyticsEvents = {
 
 export type AnalyticsEventName = (typeof AnalyticsEvents)[keyof typeof AnalyticsEvents];
 
-const provider = (import.meta.env.PUBLIC_ANALYTICS_PROVIDER ?? 'plausible') as AnalyticsProvider;
-
-export const analyticsProvider = provider;
-
 export type AnalyticsProps = Record<string, string | number | boolean>;
 
 export function trackEvent(name: AnalyticsEventName, props?: AnalyticsProps) {
   if (typeof window === 'undefined') return;
 
-  if (provider === 'plausible') {
-    const plausible = (window as typeof window & { plausible?: (event: string, options?: { props?: AnalyticsProps }) => void })
-      .plausible;
-    if (typeof plausible === 'function') {
-      plausible(name, props ? { props } : undefined);
-    }
-    return;
-  }
+  const handlers: Record<AnalyticsProvider, (eventName: AnalyticsEventName, eventProps?: AnalyticsProps) => void> = {
+    plausible: (eventName, eventProps) => {
+      const plausible = (window as typeof window & { plausible?: (event: string, options?: { props?: AnalyticsProps }) => void })
+        .plausible;
+      if (typeof plausible === 'function') {
+        plausible(eventName, eventProps ? { props: eventProps } : undefined);
+      }
+    },
+    ga4: (eventName, eventProps) => {
+      const gtag = (window as typeof window & { gtag?: (...args: any[]) => void }).gtag;
+      if (typeof gtag === 'function') {
+        gtag('event', eventName, eventProps ?? {});
+      }
+    },
+    gtm: (eventName, eventProps) => {
+      const dataLayer = (window as typeof window & { dataLayer?: Array<Record<string, unknown>> }).dataLayer;
+      if (Array.isArray(dataLayer)) {
+        dataLayer.push({ event: eventName, ...(eventProps ?? {}) });
+      } else {
+        (window as typeof window & { dataLayer?: Array<Record<string, unknown>> }).dataLayer = [
+          { event: eventName, ...(eventProps ?? {}) }
+        ];
+      }
+    },
+    none: () => {}
+  };
 
-  if (provider === 'ga4') {
-    const gtag = (window as typeof window & { gtag?: (...args: any[]) => void }).gtag;
-    if (typeof gtag === 'function') {
-      gtag('event', name, props ?? {});
-    }
-  }
+  handlers[analyticsConfig.provider]?.(name, props);
 }
+
+export { analyticsConfig };
+export type { AnalyticsProvider } from './analytics-config';
