@@ -54,15 +54,5 @@ const jsonLd = {
     <LocationFooter brand={brand} location={location} footer={footer} />
   </main>
 
-  <script type="module">
-    import { trackEvent } from '../lib/analytics';
-
-    const tracked = document.querySelectorAll('[data-track]');
-    tracked.forEach((element) => {
-      element.addEventListener('click', () => {
-        const name = element.getAttribute('data-track');
-        if (name) trackEvent(name);
-      });
-    });
-  </script>
+  <script type="module" src={Astro.resolve('../scripts/track.ts')}></script>
 </Base>
