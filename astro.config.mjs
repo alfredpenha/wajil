@@ -3,8 +3,8 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   output: 'static',
-  site: process.env.SITE_URL ?? 'https://alfredpenha.github.io',
-  base: '/wajil/',
+  site: process.env.SITE_URL ?? 'https://www.wajil.mx',
+  base: '/',
   trailingSlash: 'always',
   integrations: [tailwind()]
 });
