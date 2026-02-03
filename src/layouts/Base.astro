@@ -5,7 +5,7 @@ import { withBase } from '../lib/images';
 import { resolveAnalyticsConfig } from '../lib/analytics-config';
 import AnalyticsProvider from '../components/analytics/AnalyticsProvider.astro';
 
-const analyticsConfig = resolveAnalyticsConfig(site.meta.domain);
+const analyticsConfig = resolveAnalyticsConfig();
 const heroPreload = Astro.props.heroPreload ?? null;
 const jsonLd = Astro.props.jsonLd ?? null;
 
@@ -65,17 +65,9 @@ const favicon = withBase(site.meta.favicon);
   <body class="bg-ink text-sand">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <AnalyticsProvider placement="body" config={analyticsConfig} />
-    <script is:inline define:vars={{ provider: analyticsConfig.provider, ga4Id: analyticsConfig.ga4Id, gtmId: analyticsConfig.gtmId }}>
+    <script is:inline define:vars={{ provider: analyticsConfig.provider, ga4Id: analyticsConfig.ga4Id }}>
       window.__trackEvent = function(name, props) {
         if (!name) return;
-
-        if (provider === 'plausible') {
-          const plausible = window.plausible;
-          if (typeof plausible === 'function') {
-            plausible(name, props ? { props: props } : undefined);
-          }
-          return;
-        }
 
         if (provider === 'ga4') {
           const gtag = window.gtag;
@@ -83,15 +75,6 @@ const favicon = withBase(site.meta.favicon);
             gtag('event', name, props || {});
           }
           return;
-        }
-
-        if (provider === 'gtm') {
-          const dataLayer = window.dataLayer;
-          if (Array.isArray(dataLayer)) {
-            dataLayer.push(Object.assign({ event: name }, props || {}));
-          } else {
-            window.dataLayer = [Object.assign({ event: name }, props || {})];
-          }
         }
       };
     </script>

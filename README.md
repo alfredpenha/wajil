@@ -36,37 +36,20 @@ npm run preview
 - Si carga HTML pero no CSS/imagenes: revisa que `base: '/wajil/'` este configurado en `astro.config.mjs`.
 - `dist/` no se commitea; lo publica GitHub Actions.
 
-## Analytics (GTM / GA4 / Plausible)
+## Analytics (Google Tag / GA4)
 El layout incluye el script del proveedor seleccionado y un helper para eventos en `src/lib/analytics.ts`.
 
 Variables publicas (usa `.env` en local y variables en el deploy):
 ```
-PUBLIC_ANALYTICS_PROVIDER=gtm
-PUBLIC_GTM_ID=GTM-XXXXXXX
-PUBLIC_PLAUSIBLE_DOMAIN=wajil.mx
-PUBLIC_GA4_ID=G-XXXXXXX
+PUBLIC_ANALYTICS_PROVIDER=ga4
+PUBLIC_GA4_ID=G-6L8H9KPN42
 ```
 
-Para cambiar a GA4, configura:
+Para usar Google Tag (gtag.js):
 ```
 PUBLIC_ANALYTICS_PROVIDER=ga4
-PUBLIC_GA4_ID=G-XXXXXXX
+PUBLIC_GA4_ID=G-6L8H9KPN42
 ```
-
-Para usar Google Tag Manager:
-```
-PUBLIC_ANALYTICS_PROVIDER=gtm
-PUBLIC_GTM_ID=GTM-XXXXXXX
-```
-
-Para usar Plausible:
-```
-PUBLIC_ANALYTICS_PROVIDER=plausible
-PUBLIC_PLAUSIBLE_DOMAIN=wajil.mx
-```
-
-Notas:
-- Si no defines `PUBLIC_PLAUSIBLE_DOMAIN`, se usa `site.meta.domain` como fallback.
 
 ## Contenido e imagenes
 - Edita copy, links, reseñas y paths en `src/content/site.json`.
