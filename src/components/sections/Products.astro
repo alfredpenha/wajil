@@ -8,7 +8,7 @@ import PillLink from '../ui/PillLink.astro';
 const { products, uberEats } = Astro.props;
 const productWidths = [480, 720];
 ---
-<section id="producto" class="section-x border-t border-fog/10 py-16">
+<section id="producto" class="section-x border-t border-fog/10 py-16" data-analytics-section="menu">
   <div class="section-inner">
     <div class="mb-10 space-y-3">
       <h2 class="section-title">{products.title}</h2>
@@ -22,8 +22,16 @@ const productWidths = [480, 720];
         const webp = buildSrcset(base, productWidths, 'webp');
         const jpg = buildSrcset(base, productWidths, 'jpg');
         const fallback = withBase(item.image.fallback);
+        const productId = item.title.toLowerCase().replace(/\s+/g, '-');
         return (
-        <Card as="article" class="flex min-w-[240px] snap-start flex-col bg-ink/70 p-4 md:min-w-0 md:h-full">
+        <Card
+          as="article"
+          class="flex min-w-[240px] snap-start flex-col bg-ink/70 p-4 md:min-w-0 md:h-full"
+          data-analytics-item
+          data-product-id={productId}
+          data-product-name={item.title}
+          data-product-category="tamales"
+        >
           <picture>
             <source srcset={avif} sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 70vw" type="image/avif" />
             <source srcset={webp} sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 70vw" type="image/webp" />

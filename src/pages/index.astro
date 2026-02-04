@@ -10,7 +10,7 @@ import Origin from '../components/sections/Origin.astro';
 import Reviews from '../components/sections/Reviews.astro';
 import HowTo from '../components/sections/HowTo.astro';
 import LocationFooter from '../components/sections/LocationFooter.astro';
-import trackScript from '../scripts/track.ts?raw';
+import analyticsScript from '../scripts/analytics.js?raw';
 
 const { brand, navigation, uberEats, hero, products, promise, origin, reviews, howTo, location, footer, meta } = site;
 const siteUrl = meta.url ?? `https://${meta.domain}`;
@@ -55,5 +55,5 @@ const jsonLd = {
     <LocationFooter brand={brand} location={location} footer={footer} />
   </main>
 
-  <script type="module" is:inline set:html={trackScript}></script>
+  <script type="module" is:inline set:html={analyticsScript}></script>
 </Base>

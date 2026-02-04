@@ -36,19 +36,19 @@ npm run preview
 - Si carga HTML pero no CSS/imagenes: revisa que `base: '/wajil/'` este configurado en `astro.config.mjs`.
 - `dist/` no se commitea; lo publica GitHub Actions.
 
-## Analytics (Google Tag / GA4)
+## Analytics (GTM + GA4)
 El layout incluye el script del proveedor seleccionado y un helper para eventos en `src/lib/analytics.ts`.
 
 Variables publicas (usa `.env` en local y variables en el deploy):
 ```
-PUBLIC_ANALYTICS_PROVIDER=ga4
-PUBLIC_GA4_ID=G-6L8H9KPN42
+PUBLIC_ANALYTICS_PROVIDER=gtm
+PUBLIC_GTM_ID=GTM-XXXXXXX
 ```
 
-Para usar Google Tag (gtag.js):
+Para usar Google Tag Manager:
 ```
-PUBLIC_ANALYTICS_PROVIDER=ga4
-PUBLIC_GA4_ID=G-6L8H9KPN42
+PUBLIC_ANALYTICS_PROVIDER=gtm
+PUBLIC_GTM_ID=GTM-XXXXXXX
 ```
 
 ## Contenido e imagenes
