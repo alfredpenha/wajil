@@ -1,3 +1,4 @@
+﻿
 # WAJIL Official Site (v1)
 [![Deploy to GitHub Pages](https://github.com/alfredpenha/wajil/actions/workflows/deploy.yml/badge.svg)](https://github.com/alfredpenha/wajil/actions/workflows/deploy.yml)
 
@@ -6,7 +7,7 @@ Landing ultra ligera en Astro + TailwindCSS + TypeScript. Contenido centralizado
 ## Stack y deploy
 - Astro (SSG) + TailwindCSS + TypeScript
 - Deploy target elegido: **Cloudflare Pages**
-  - Justificacion: distribucion global en edge, despliegue rapido para sitios estaticos y buen soporte para Astro sin configuracion compleja.
+  - Justificación: distribución global en edge, despliegue rápido para sitios estáticos y buen soporte para Astro sin configuración compleja.
 
 ## Requisitos
 - Node 18+
@@ -28,18 +29,18 @@ npm run preview
 1. Crear un nuevo proyecto en Cloudflare Pages.
 2. Build command: `npm run build`
 3. Output directory: `dist`
-4. Variables de entorno (si aplica): ver seccion Analytics.
+4. Variables de entorno (si aplica): ver sección Analytics.
 
 ## Deployment (GitHub Pages)
 - URL esperada: https://alfredpenha.github.io/wajil/
 - Activar Pages: Settings → Pages → Source = GitHub Actions
-- Si carga HTML pero no CSS/imagenes: revisa que `base: '/wajil/'` este configurado en `astro.config.mjs`.
+- Si carga HTML pero no CSS/imágenes: revisa que `base: '/wajil/'` esté configurado en `astro.config.mjs`.
 - `dist/` no se commitea; lo publica GitHub Actions.
 
 ## Analytics (GTM + GA4)
 El layout incluye el script del proveedor seleccionado y un helper para eventos en `src/lib/analytics.ts`.
 
-Variables publicas (usa `.env` en local y variables en el deploy):
+Variables públicas (usa `.env` en local y variables en el deploy):
 ```
 PUBLIC_ANALYTICS_PROVIDER=gtm
 PUBLIC_GTM_ID=GTM-XXXXXXX
@@ -51,10 +52,10 @@ PUBLIC_ANALYTICS_PROVIDER=gtm
 PUBLIC_GTM_ID=GTM-XXXXXXX
 ```
 
-## Contenido e imagenes
+## Contenido e imágenes
 - Edita copy, links, reseñas y paths en `src/content/site.json`.
 - Coloca assets en `src/assets/images` y actualiza las rutas en el JSON.
-- La pagina usa `<picture>` con AVIF + WebP + fallback JPG.
+- La página usa `<picture>` con AVIF + WebP + fallback JPG.
 
 ## Estructura
 ```

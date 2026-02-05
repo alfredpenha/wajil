@@ -1,7 +1,7 @@
-{
+﻿{
   "meta": {
-    "title": "WAJIL | Tamales gourmet en Tuxtla Gutierrez, Chiapas | Soconusco",
-    "description": "Tamales gourmet en Tuxtla Gutierrez, Chiapas. Hechos en Soconusco con ingredientes reales y tecnica artesanal. Ordena WAJIL en Uber Eats.",
+    "title": "WAJIL | Tamales gourmet en Tuxtla Gutiérrez, Chiapas | Soconusco",
+    "description": "Tamales gourmet en Tuxtla Gutiérrez, Chiapas. Hechos en Soconusco con ingredientes reales y técnica artesanal. Ordena WAJIL en Uber Eats.",
     "domain": "www.wajil.mx",
     "url": "https://www.wajil.mx",
     "ogImage": "/assets/images/img1-hero-16x9.jpg",
@@ -12,22 +12,22 @@
     "name": "WAJIL",
     "logo": "WAJIL",
     "tagline": "Tamal artesanal, directo al ritual.",
-    "location": "Tuxtla Gutierrez, Chiapas"
+    "location": "Tuxtla Gutiérrez, Chiapas"
   },
   "navigation": [
     { "label": "Producto", "href": "#producto" },
     { "label": "Origen", "href": "#origen" },
-    { "label": "Resenas", "href": "#resenas" },
-    { "label": "Ubicacion", "href": "#ubicacion" }
+    { "label": "Reseñas", "href": "#resenas" },
+    { "label": "Ubicación", "href": "#ubicacion" }
   ],
   "uberEats": {
     "label": "Pedir en Uber Eats",
     "href": "https://www.ubereats.com"
   },
   "hero": {
-    "title": "WAJIL lleva el tamal a su forma mas esencial.",
-    "subcopy": "Masa suave, relleno profundo y una tecnica precisa. Hecho en Soconusco, servido fresco en Tuxtla.",
-    "trust": "Entrega rapida en Uber Eats. Hecho a mano todos los dias.",
+    "title": "WAJIL lleva el tamal a su forma más esencial.",
+    "subcopy": "Masa suave, relleno profundo y una técnica precisa. Hecho en Soconusco, servido fresco en Tuxtla.",
+    "trust": "Entrega rápida en Uber Eats. Hecho a mano todos los días.",
     "image": {
       "alt": "Tamal servido en plato negro sobre fondo oscuro.",
       "desktop": {
@@ -48,11 +48,11 @@
     "ctaLabel": "Ver menú en Uber Eats",
     "items": [
       {
-        "title": "Clasico Envuelto",
+        "title": "Clásico Envuelto",
         "copy": "El tamal tradicional con masa aireada y relleno preciso.",
         "linkLabel": "Ver en Uber Eats",
         "image": {
-          "alt": "Tamal clasico envuelto en hoja sobre plato negro.",
+          "alt": "Tamal clásico envuelto en hoja sobre plato negro.",
           "avif": "/assets/images/img5-square-720.avif",
           "webp": "/assets/images/img5-square-720.webp",
           "fallback": "/assets/images/img5-square.jpg"
@@ -71,7 +71,7 @@
       },
       {
         "title": "Textura",
-        "copy": "Capas y contraste para un bocado mas complejo.",
+        "copy": "Capas y contraste para un bocado más complejo.",
         "linkLabel": "Ver en Uber Eats",
         "image": {
           "alt": "Detalle de tamal con textura y relleno.",
@@ -93,11 +93,11 @@
     "bullets": [
       {
         "title": "Ingredientes reales",
-        "copy": "Maiz, hoja y rellenos honestos. Sin atajos."
+        "copy": "Maíz, hoja y rellenos honestos. Sin atajos."
       },
       {
         "title": "Ritual diario",
-        "copy": "Preparado cada manana para mantener textura y aroma."
+        "copy": "Preparado cada mañana para mantener textura y aroma."
       },
       {
         "title": "Sabor limpio",
@@ -107,32 +107,32 @@
   },
   "origin": {
     "title": "Origen Soconusco",
-    "body": "En la region del Soconusco nace el maiz que da cuerpo a WAJIL. Cada pieza respeta el tiempo de coccion y la memoria del tamal chiapaneco.",
+    "body": "En la región del Soconusco nace el maíz que da cuerpo a WAJIL. Cada pieza respeta el tiempo de cocción y la memoria del tamal chiapaneco.",
     "ctaLabel": "Pide ahora",
     "image": {
-      "alt": "Maiz y paisaje del Soconusco al atardecer.",
+      "alt": "Maíz y paisaje del Soconusco al atardecer.",
       "avif": "/assets/images/img4-origin-1280.avif",
       "webp": "/assets/images/img4-origin-1280.webp",
       "fallback": "/assets/images/img4-origin.jpg"
     }
   },
   "reviews": {
-    "title": "Resenas",
+    "title": "Reseñas",
     "items": [
       { "quote": "Sabor profundo y textura impecable. Se siente artesanal.", "name": "Diana M.", "meta": "Cliente en Tuxtla" },
-      { "quote": "El servido es mi favorito. Calma y caracter.", "name": "Leo R.", "meta": "Resena verificada" },
-      { "quote": "La masa tiene el punto exacto. Muy recomendado.", "name": "Sofia P.", "meta": "Cliente en Tuxtla" },
-      { "quote": "WAJIL eleva el tamal sin perder raiz.", "name": "Carlos G.", "meta": "Resena verificada" }
+      { "quote": "El servido es mi favorito. Calma y carácter.", "name": "Leo R.", "meta": "Reseña verificada" },
+      { "quote": "La masa tiene el punto exacto. Muy recomendado.", "name": "Sofía P.", "meta": "Cliente en Tuxtla" },
+      { "quote": "WAJIL eleva el tamal sin perder raíz.", "name": "Carlos G.", "meta": "Reseña verificada" }
     ]
   },
   "howTo": {
-    "title": "Como pedir",
+    "title": "Cómo pedir",
     "stepLabel": "Paso",
     "ctaLabel": "Abrir Uber Eats",
     "steps": [
       { "title": "Abre Uber Eats", "body": "Busca WAJIL y revisa los productos disponibles." },
       { "title": "Elige tu estilo", "body": "Envuelto, servido o textura. Cada uno tiene su propio ritmo." },
-      { "title": "Recibe en minutos", "body": "Entrega rapida en Tuxtla Gutierrez." }
+      { "title": "Recibe en minutos", "body": "Entrega rápida en Tuxtla Gutiérrez." }
     ],
     "background": {
       "alt": "",
@@ -142,8 +142,8 @@
     }
   },
   "location": {
-    "kicker": "Ubicacion",
-    "title": "Tuxtla Gutierrez, Chiapas",
+    "kicker": "Ubicación",
+    "title": "Tuxtla Gutiérrez, Chiapas",
     "uberLabel": "Uber Eats",
     "uberHref": "https://www.ubereats.com",
     "social": [
@@ -160,12 +160,12 @@
   },
   "privacy": {
     "title": "Aviso de privacidad",
-    "summary": "Informacion basica sobre como protegemos los datos.",
+    "summary": "Información básica sobre cómo protegemos los datos.",
     "updated": "2026-01-01",
     "body": [
-      "WAJIL recopila unicamente los datos que compartes por correo para atender tu solicitud.",
-      "No compartimos tu informacion con terceros ni utilizamos tus datos con fines publicitarios.",
-      "Puedes solicitar la eliminacion de tus datos escribiendo a hola@wajil.com."
+      "WAJIL recopila únicamente los datos que compartes por correo para atender tu solicitud.",
+      "No compartimos tu información con terceros ni utilizamos tus datos con fines publicitarios.",
+      "Puedes solicitar la eliminación de tus datos escribiendo a hola@wajil.com."
     ]
   }
 }
