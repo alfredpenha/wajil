@@ -4,7 +4,7 @@
 
 @layer components {
   .btn-gold {
-    @apply inline-flex items-center justify-center rounded-full bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:-translate-y-0.5 hover:shadow-glow;
+    @apply inline-flex items-center justify-center rounded-full border border-gold/40 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:-translate-y-0.5 hover:border-gold hover:shadow-glow;
   }
 
   .section-x {
@@ -111,9 +111,14 @@ button:focus-visible {
   animation: fadeUp 1.1s ease both;
 }
 
+.fade-up-item {
+  animation: fadeUp 0.9s ease both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fade-up,
-  .fade-up-slow {
+  .fade-up-slow,
+  .fade-up-item {
     animation: none;
   }
 }

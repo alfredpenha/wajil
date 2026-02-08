@@ -18,9 +18,9 @@ const { brand, navigation, uberEats } = Astro.props;
       class="hidden text-[10px] md:inline-flex"
       href={uberEats.href}
       dataTrack={AnalyticsEvents.uberEatsHeader}
-      ariaLabel={`${uberEats.label} - Header`}
+      ariaLabel={`${uberEats.headerLabel ?? uberEats.label} - Header`}
     >
-      {uberEats.label}
+      {uberEats.headerLabel ?? uberEats.label}
     </ButtonGold>
   </div>
 </header>

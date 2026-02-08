@@ -15,8 +15,8 @@ const productWidths = [480, 720];
       <p class="max-w-2xl text-sm text-fog md:text-base">{products.intro}</p>
     </div>
 
-    <div class="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 md:grid md:grid-cols-3 md:overflow-visible fade-up">
-      {products.items.map((item) => {
+    <div class="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 md:grid md:grid-cols-3 md:overflow-visible">
+      {products.items.map((item, index) => {
         const base = baseFromPath(item.image.fallback);
         const avif = buildSrcset(base, productWidths, 'avif');
         const webp = buildSrcset(base, productWidths, 'webp');
@@ -26,7 +26,8 @@ const productWidths = [480, 720];
         return (
         <Card
           as="article"
-          class="flex min-w-[240px] snap-start flex-col bg-ink/70 p-4 md:min-w-0 md:h-full"
+          class="flex min-w-[240px] snap-start flex-col bg-ink/70 p-4 md:min-w-0 md:h-full fade-up-item"
+          style={`animation-delay: ${index * 0.08}s`}
           data-analytics-item
           data-product-id={productId}
           data-product-name={item.title}

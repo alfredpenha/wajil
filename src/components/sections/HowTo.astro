@@ -1,4 +1,4 @@
----
+﻿---
 import { AnalyticsEvents } from '../../lib/analytics';
 import { baseFromPath, buildSrcset, withBase } from '../../lib/images';
 import ButtonGold from '../ui/ButtonGold.astro';
@@ -35,7 +35,7 @@ const howToFallback = withBase(howTo.background.fallback);
     <h2 class="section-title mb-8">{howTo.title}</h2>
     <div class="grid gap-6 md:grid-cols-3">
       {howTo.steps.map((step, index) => (
-        <Card class="bg-ink/80 p-6">
+        <Card class="bg-ink/80 p-6 fade-up-item" style={`animation-delay: ${index * 0.08}s`}>
           <p class="mb-3 text-xs uppercase tracking-[0.3em] text-gold">
             {howTo.stepLabel} {index + 1}
           </p>
@@ -58,3 +58,5 @@ const howToFallback = withBase(howTo.background.fallback);
     </div>
   </div>
 </section>
+
+

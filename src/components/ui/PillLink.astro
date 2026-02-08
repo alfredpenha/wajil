@@ -1,7 +1,7 @@
 ---
 const { href, class: className = '', ariaLabel } = Astro.props;
 const classes = [
-  'inline-flex items-center gap-2 self-start rounded-full border border-gold/40 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-gold transition hover:border-gold hover:bg-gold/10 hover:text-sand',
+  'inline-flex items-center gap-2 self-start rounded-full border border-gold/40 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-gold transition hover:-translate-y-0.5 hover:border-gold hover:bg-gold/10 hover:text-sand hover:shadow-glow',
   className
 ]
   .filter(Boolean)

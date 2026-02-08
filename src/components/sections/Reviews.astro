@@ -6,11 +6,22 @@ const { reviews } = Astro.props;
 <section id="resenas" class="section-x border-t border-fog/10 py-16">
   <div class="section-inner">
     <h2 class="section-title mb-8">{reviews.title}</h2>
-    <div class="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible fade-up">
-      {reviews.items.map((review) => (
-        <Card as="article" class="min-w-[240px] snap-start bg-ink/70 p-6 md:min-w-0">
-          <p class="mb-4 text-sm leading-relaxed text-sand">"{review.quote}"</p>
-          <p class="text-xs uppercase tracking-[0.2em] text-gold">{review.name}</p>
+    <div class="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
+      {reviews.items.map((review, index) => (
+        <Card
+          as="article"
+          class="min-w-[240px] snap-start bg-ink/70 p-6 md:min-w-0 fade-up-item"
+          style={`animation-delay: ${index * 0.08}s`}
+        >
+          <div class="mb-3 flex gap-1 text-gold/80" aria-hidden="true">
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+          </div>
+          <p class="mb-4 text-[13px] leading-relaxed text-sand md:text-sm">"{review.quote}"</p>
+          <p class="text-[11px] uppercase tracking-[0.22em] text-gold md:text-xs">{review.name}</p>
           {review.meta ? (
             <p class="mt-1 text-[10px] uppercase tracking-[0.25em] text-fog">{review.meta}</p>
           ) : null}
