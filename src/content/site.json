@@ -5,7 +5,7 @@
     "domain": "www.wajil.mx",
     "url": "https://www.wajil.mx",
     "ogImage": "/assets/images/img1-hero-16x9.jpg",
-    "ogImageAlt": "Tamal servido en plato negro.",
+    "ogImageAlt": "Tamales variados servidos en plato negro.",
     "favicon": "favicon.ico"
   },
   "brand": {
@@ -29,7 +29,7 @@
     "subcopy": "Masa suave, relleno profundo y una técnica precisa. Hecho en Soconusco, servido fresco en Tuxtla.",
     "trust": "Entrega rápida en Uber Eats. Hecho a mano todos los días.",
     "image": {
-      "alt": "Tamal servido en plato negro sobre fondo oscuro.",
+      "alt": "Tamales variados servidos en plato negro sobre fondo oscuro.",
       "desktop": {
         "avif": "/assets/images/img1-hero-16x9-1280.avif",
         "webp": "/assets/images/img1-hero-16x9-1280.webp",
@@ -119,10 +119,36 @@
   "reviews": {
     "title": "Reseñas",
     "items": [
-      { "quote": "Sabor profundo y textura impecable. Se siente artesanal.", "name": "Diana M.", "meta": "Cliente en Tuxtla" },
-      { "quote": "El servido es mi favorito. Calma y carácter.", "name": "Leo R.", "meta": "Reseña verificada" },
-      { "quote": "La masa tiene el punto exacto. Muy recomendado.", "name": "Sofía P.", "meta": "Cliente en Tuxtla" },
-      { "quote": "WAJIL eleva el tamal sin perder raíz.", "name": "Carlos G.", "meta": "Reseña verificada" }
+      {
+        "quote": "Sabe a frijol de casa, bien hecho. Está bien sazonado y el toque de salsa roja pica justo lo necesario. La masa es suave y nada pesada.",
+        "name": "Mariana L.",
+        "meta": "Cliente en Tuxtla"
+      },
+      {
+        "quote": "Se nota lo fresco del chipilín y el pollo viene bien servido. Es aromático, muy chiapaneco y con un sabor que se queda.",
+        "name": "Jorge R.",
+        "meta": "Reseña verificada"
+      },
+      {
+        "quote": "Ideal si te gusta el picante. La salsa verde tiene carácter y no es nada plana. Va perfecto con crema o quesito.",
+        "name": "Sofía P.",
+        "meta": "Cliente en Tuxtla"
+      },
+      {
+        "quote": "La masa está suave y en su punto. El queso se siente cremoso y bien equilibrado, no empalaga.",
+        "name": "Luis M.",
+        "meta": "Reseña verificada"
+      },
+      {
+        "quote": "“Pedí el paquete de 4 para probar varios sabores y fue buena decisión. Llegaron calientes y cada tamal tiene su propio estilo.",
+        "name": "Andrea C.",
+        "meta": "Cliente en Tuxtla"
+      },
+      {
+        "quote": "El paquete de 6 está perfecto para compartir. Llegaron bien calientes y se nota el cuidado en el empaque. Buen relleno en todos.",
+        "name": "Carlos G.",
+        "meta": "Reseña verificada"
+      }
     ]
   },
   "howTo": {
@@ -130,9 +156,18 @@
     "stepLabel": "Paso",
     "ctaLabel": "Abrir Uber Eats",
     "steps": [
-      { "title": "Abre Uber Eats", "body": "Busca WAJIL y revisa los productos disponibles." },
-      { "title": "Elige tu estilo", "body": "Envuelto, servido o textura. Cada uno tiene su propio ritmo." },
-      { "title": "Recibe en minutos", "body": "Entrega rápida en Tuxtla Gutiérrez." }
+      {
+        "title": "Descubre WAJIL en Uber Eats",
+        "body": "Busca WAJIL y conoce nuestros tamales artesanales del Soconusco."
+      },
+      {
+        "title": "Elige tus tamales",
+        "body": "Selecciona tus sabores o arma un paquete. Cada tamal se prepara de forma artesanal y se envía en empaque térmico."
+      },
+      {
+        "title": "Disfrútalos calientes en casa",
+        "body": "Entrega rápida y empaque térmico para conservar sabor y textura."
+      }
     ],
     "background": {
       "alt": "",
@@ -147,8 +182,7 @@
     "uberLabel": "Uber Eats",
     "uberHref": "https://www.ubereats.com",
     "social": [
-      { "label": "Instagram", "href": "https://instagram.com" },
-      { "label": "TikTok", "href": "https://tiktok.com" }
+      { "label": "Instagram", "href": "https://instagram.com" }
     ]
   },
   "footer": {
