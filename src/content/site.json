@@ -22,7 +22,7 @@
   ],
   "uberEats": {
     "label": "Pedir en Uber Eats",
-    "href": "https://www.ubereats.com"
+    "href": "https://www.ubereats.com/store-browse-uuid/a63fe8d9-d04a-5b29-b91c-1b43f87a2a74?diningMode=DELIVERY"
   },
   "hero": {
     "title": "WAJIL lleva el tamal a su forma más esencial.",
@@ -180,7 +180,7 @@
     "kicker": "Ubicación",
     "title": "Tuxtla Gutiérrez, Chiapas",
     "uberLabel": "Uber Eats",
-    "uberHref": "https://www.ubereats.com",
+    "uberHref": "https://www.ubereats.com/store-browse-uuid/a63fe8d9-d04a-5b29-b91c-1b43f87a2a74?diningMode=DELIVERY",
     "social": [
       { "label": "Instagram", "href": "https://instagram.com" }
     ]

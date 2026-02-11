@@ -6,12 +6,19 @@ const { brand, navigation, uberEats } = Astro.props;
 ---
 <header class="sticky top-0 z-50 border-b border-fog/10 bg-ink/85 backdrop-blur">
   <div class="section-inner section-x flex items-center justify-between py-4">
-    <a href="#inicio" class="text-sm font-semibold tracking-[0.4em] text-gold transition hover:text-sand">
+    <a
+      href="#inicio"
+      class="text-sm font-semibold tracking-[0.4em] text-gold transition hover:text-sand"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {brand.logo}
     </a>
     <nav class="hidden items-center gap-6 text-sm uppercase tracking-[0.12em] text-sand/70 md:flex" aria-label="Secciones">
       {navigation.map((item) => (
-          <a class="transition hover:text-gold" href={item.href}>{item.label}</a>
+          <a class="transition hover:text-gold" href={item.href} target="_blank" rel="noopener noreferrer">
+            {item.label}
+          </a>
         ))}
       </nav>
     <ButtonGold

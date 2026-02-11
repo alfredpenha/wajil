@@ -17,7 +17,14 @@ const classes = [
   .filter(Boolean)
   .join(' ');
 ---
-<a href={href} class={classes} data-track={dataTrack} aria-label={ariaLabel}>
+<a
+  href={href}
+  class={classes}
+  data-track={dataTrack}
+  aria-label={ariaLabel}
+  target="_blank"
+  rel="noopener noreferrer"
+>
   <slot />
   {icon ? (
     <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
