@@ -44,40 +44,51 @@
   },
   "products": {
     "title": "Productos",
-    "intro": "Tres formas de vivir WAJIL. Todo se pide en Uber Eats.",
+    "intro": "Cuatro formas de vivir WAJIL. Todo se pide en Uber Eats.",
     "ctaLabel": "Ver menú en Uber Eats",
     "items": [
       {
-        "title": "Clásico Envuelto",
-        "copy": "El tamal tradicional con masa aireada y relleno preciso.",
+        "title": "Tamal de queso",
+        "copy": "Suave, cremoso y con el balance ideal entre masa y queso.",
         "linkLabel": "Ver en Uber Eats",
         "image": {
-          "alt": "Tamal clásico envuelto en hoja sobre plato negro.",
-          "avif": "/assets/images/img5-square-720.avif",
-          "webp": "/assets/images/img5-square-720.webp",
-          "fallback": "/assets/images/img5-square.jpg"
+          "alt": "Tamal de queso servido en hoja sobre plato negro.",
+            "avif": "/assets/images/img5-square-720.avif",
+            "webp": "/assets/images/img5-square-720.webp",
+            "fallback": "/assets/images/img5-square.jpg"
         }
       },
       {
-        "title": "Servido",
-        "copy": "El tamal en plato, listo para comer sin pausa.",
+        "title": "Tamal de salsa verde",
+        "copy": "Salsa verde, pollo, rajas con carácter y picor equilibrado.",
         "linkLabel": "Ver en Uber Eats",
         "image": {
-          "alt": "Detalle de tamal servido con relleno visible.",
-          "avif": "/assets/images/img1-square-720.avif",
-          "webp": "/assets/images/img1-square-720.webp",
-          "fallback": "/assets/images/img1-square.jpg"
+          "alt": "Tamal de salsa verde servido en hoja sobre plato negro.",
+            "avif": "/assets/images/img6-square-720.avif",
+            "webp": "/assets/images/img6-square-720.webp",
+            "fallback": "/assets/images/img6-square.jpg"
         }
       },
       {
-        "title": "Textura",
-        "copy": "Capas y contraste para un bocado más complejo.",
+        "title": "Tamal de chipilín",
+        "copy": "Chipilín fresco y aromático más salsa roja y pollo, con sazón chiapaneca.",
         "linkLabel": "Ver en Uber Eats",
         "image": {
-          "alt": "Detalle de tamal con textura y relleno.",
-          "avif": "/assets/images/img6-square-720.avif",
-          "webp": "/assets/images/img6-square-720.webp",
-          "fallback": "/assets/images/img6-square.jpg"
+          "alt": "Tamal de chipilín servido en hoja sobre plato negro.",
+            "avif": "/assets/images/img7-square-720.avif",
+            "webp": "/assets/images/img7-square-720.webp",
+            "fallback": "/assets/images/img7-square.jpg"
+        }
+      },
+      {
+        "title": "Tamal de frijol",
+        "copy": "Sabor profundo y casero con frijol refrito y un toque picante bien sazonado.",
+        "linkLabel": "Ver en Uber Eats",
+        "image": {
+          "alt": "Tamal de frijol servido en hoja sobre plato negro.",
+            "avif": "/assets/images/img8-square-720.avif",
+            "webp": "/assets/images/img8-square-720.webp",
+            "fallback": "/assets/images/img8-square.jpg"
         }
       }
     ]

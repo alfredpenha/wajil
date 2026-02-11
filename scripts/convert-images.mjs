@@ -10,7 +10,9 @@ const presets = [
   { name: 'img3-pattern', widths: [512] },
   { name: 'img4-origin', widths: [960, 1280] },
   { name: 'img5-square', widths: [480, 720] },
-  { name: 'img6-square', widths: [480, 720] }
+  { name: 'img6-square', widths: [480, 720] },
+  { name: 'img7-square', widths: [480, 720] },
+  { name: 'img8-square', widths: [480, 720] }
 ];
 
 const formatters = [
