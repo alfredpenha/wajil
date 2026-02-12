@@ -18,6 +18,11 @@ const privacyHref = withBase(footer.privacyHref);
         >
           {location.uberLabel}
         </a>
+        <div class="text-xs uppercase tracking-[0.2em] text-fog">
+          {location.address ? <p>{location.address}</p> : null}
+          {location.phone ? <p>Tel. {location.phone}</p> : null}
+          {location.hours ? <p>{location.hours}</p> : null}
+        </div>
       </div>
       <div class="flex gap-6 text-xs uppercase tracking-[0.2em] text-fog">
         {location.social.map((link) => (

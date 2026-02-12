@@ -24,17 +24,27 @@ const jsonLd = {
   url: siteUrl,
   image: ogImageUrl,
   servesCuisine: 'Mexican',
+  priceRange: '$',
+  telephone: location.phone,
   areaServed: {
     '@type': 'AdministrativeArea',
     name: location.title
   },
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Tuxtla Gutiérrez',
+    streetAddress: 'Dem?stenes #357, Atenas',
+    addressLocality: 'Tuxtla Guti?rrez',
     addressRegion: 'Chiapas',
+    postalCode: '29025',
     addressCountry: 'MX'
   },
-  sameAs: location.social.map((item) => item.href)
+  openingHours: ['Tu-Su 07:00-14:00'],
+  menu: uberEats.href,
+  sameAs: [uberEats.href, ...location.social.map((item) => item.href)],
+  potentialAction: {
+    '@type': 'OrderAction',
+    target: uberEats.href
+  }
 };
 ---
 <Base

@@ -190,6 +190,9 @@
   "location": {
     "kicker": "Ubicación",
     "title": "Tuxtla Gutiérrez, Chiapas",
+    "address": "Demóstenes #357, Atenas, 29025 Tuxtla Gutiérrez, Chiapas",
+    "phone": "9611961578",
+    "hours": "Martes a domingo · 7:00 AM a 2:00 PM",
     "uberLabel": "Uber Eats",
     "uberHref": "https://www.ubereats.com/store-browse-uuid/a63fe8d9-d04a-5b29-b91c-1b43f87a2a74?diningMode=DELIVERY",
     "social": [
