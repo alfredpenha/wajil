@@ -16,7 +16,7 @@ const promiseFallback = withBase(promise.background.fallback);
       <source srcset={promiseAvif} sizes="100vw" type="image/avif" />
       <source srcset={promiseWebp} sizes="100vw" type="image/webp" />
       <img
-        class="h-full w-full object-cover opacity-15"
+        class="h-full w-full object-cover opacity-12"
         src={promiseFallback}
         alt={promise.background.alt}
         width="1024"
@@ -28,17 +28,17 @@ const promiseFallback = withBase(promise.background.fallback);
         decoding="async"
       />
     </picture>
-    <div class="absolute inset-0 bg-ink/70"></div>
+    <div class="absolute inset-0 bg-ink/60"></div>
   </div>
 
   <div class="section-inner fade-up">
-    <h2 class="section-title mb-10">{promise.title}</h2>
+    <h2 class="section-title mb-10 text-sand">{promise.title}</h2>
     <div class="grid gap-6 md:grid-cols-3">
       {promise.bullets.map((bullet) => (
-        <Card class="bg-ink/60 p-6">
+        <Card class="bg-ink/70 p-6">
           <span class="mb-4 inline-flex h-2.5 w-2.5 rounded-full bg-gold/80"></span>
           <h3 class="mb-2 text-lg font-semibold text-sand">{bullet.title}</h3>
-          <p class="text-sm text-fog">{bullet.copy}</p>
+          <p class="text-sm text-sand/80">{bullet.copy}</p>
         </Card>
       ))}
     </div>
