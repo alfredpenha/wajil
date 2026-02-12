@@ -11,7 +11,7 @@ const promiseJpg = buildSrcset(promiseBase, promiseWidths, 'jpg');
 const promiseFallback = withBase(promise.background.fallback);
 ---
 <section class="section-x relative overflow-hidden border-t border-fog/10 py-16">
-  <div class="absolute inset-0">
+  <div class="absolute inset-0 pointer-events-none">
     <picture>
       <source srcset={promiseAvif} sizes="100vw" type="image/avif" />
       <source srcset={promiseWebp} sizes="100vw" type="image/webp" />
@@ -31,7 +31,7 @@ const promiseFallback = withBase(promise.background.fallback);
     <div class="absolute inset-0 bg-ink/60"></div>
   </div>
 
-  <div class="section-inner fade-up">
+  <div class="section-inner relative z-10 fade-up">
     <h2 class="section-title mb-10 text-sand">{promise.title}</h2>
     <div class="grid gap-6 md:grid-cols-3">
       {promise.bullets.map((bullet) => (
