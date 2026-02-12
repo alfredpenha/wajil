@@ -97,9 +97,32 @@ export const SiteSchema = z.object({
     ),
     background: ImageWithAltSchema
   }),
+  faq: z
+    .object({
+      title: z.string(),
+      items: z.array(
+        z.object({
+          question: z.string(),
+          answer: z.string()
+        })
+      )
+    })
+    .optional(),
   location: z.object({
     kicker: z.string(),
     title: z.string(),
+    address: z.string().optional(),
+    phone: z.string().optional(),
+    hours: z.string().optional(),
+    priceRange: z.string().optional(),
+    quickFacts: z
+      .array(
+        z.object({
+          label: z.string(),
+          value: z.string()
+        })
+      )
+      .optional(),
     uberLabel: z.string(),
     uberHref: z.string(),
     social: z.array(LinkSchema)

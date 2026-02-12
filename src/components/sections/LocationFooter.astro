@@ -22,7 +22,17 @@ const privacyHref = withBase(footer.privacyHref);
           {location.address ? <p>{location.address}</p> : null}
           {location.phone ? <p>Tel. {location.phone}</p> : null}
           {location.hours ? <p>{location.hours}</p> : null}
+          {location.priceRange ? <p>Rango de precio: {location.priceRange}</p> : null}
         </div>
+        {location.quickFacts?.length ? (
+          <div class="mt-4 grid gap-2 text-[11px] uppercase tracking-[0.18em] text-sand/70 sm:grid-cols-2">
+            {location.quickFacts.map((fact) => (
+              <p>
+                <span class="text-gold/80">{fact.label}:</span> {fact.value}
+              </p>
+            ))}
+          </div>
+        ) : null}
       </div>
       <div class="flex gap-6 text-xs uppercase tracking-[0.2em] text-fog">
         {location.social.map((link) => (

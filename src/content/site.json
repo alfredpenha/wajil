@@ -18,6 +18,7 @@
     { "label": "Producto", "href": "#producto" },
     { "label": "Origen", "href": "#origen" },
     { "label": "Reseñas", "href": "#resenas" },
+    { "label": "FAQ", "href": "#faq" },
     { "label": "Ubicación", "href": "#ubicacion" }
   ],
   "uberEats": {
@@ -187,12 +188,39 @@
       "fallback": "/assets/images/img3-pattern.jpg"
     }
   },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Dónde se encuentra WAJIL?",
+        "answer": "En Demóstenes #357, Atenas, 29025 Tuxtla Gutiérrez, Chiapas."
+      },
+      {
+        "question": "¿Cuál es el horario de atención?",
+        "answer": "De martes a domingo, de 7:00 AM a 2:00 PM."
+      },
+      {
+        "question": "¿Cómo puedo pedir?",
+        "answer": "Puedes pedir directo en Uber Eats desde el menú de WAJIL."
+      },
+      {
+        "question": "¿En qué zona entregan?",
+        "answer": "Entrega disponible en Tuxtla Gutiérrez mediante Uber Eats."
+      }
+    ]
+  },
   "location": {
     "kicker": "Ubicación",
     "title": "Tuxtla Gutiérrez, Chiapas",
     "address": "Demóstenes #357, Atenas, 29025 Tuxtla Gutiérrez, Chiapas",
     "phone": "9611961578",
     "hours": "Martes a domingo · 7:00 AM a 2:00 PM",
+    "priceRange": "$$",
+    "quickFacts": [
+      { "label": "Horario", "value": "Mar-Dom · 7:00 AM a 2:00 PM" },
+      { "label": "Cómo pedir", "value": "Uber Eats" },
+      { "label": "Cobertura", "value": "Tuxtla Gutiérrez" }
+    ],
     "uberLabel": "Uber Eats",
     "uberHref": "https://www.ubereats.com/store-browse-uuid/a63fe8d9-d04a-5b29-b91c-1b43f87a2a74?diningMode=DELIVERY",
     "social": [

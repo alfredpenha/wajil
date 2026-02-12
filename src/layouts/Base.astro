@@ -8,6 +8,7 @@ import AnalyticsProvider from '../components/analytics/AnalyticsProvider.astro';
 const analyticsConfig = resolveAnalyticsConfig();
 const heroPreload = Astro.props.heroPreload ?? null;
 const jsonLd = Astro.props.jsonLd ?? null;
+const jsonLdList = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 
 const pageTitle = Astro.props.title
   ? `${Astro.props.title} - ${site.brand.name}`
@@ -56,9 +57,11 @@ const favicon = withBase(site.meta.favicon);
       <link rel="preload" as="image" href={heroPreload.mobile} media="(max-width: 767px)" />
     ) : null}
 
-    {jsonLd ? (
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-    ) : null}
+    {jsonLdList.length
+      ? jsonLdList.map((item) => (
+          <script type="application/ld+json">{JSON.stringify(item)}</script>
+        ))
+      : null}
 
     <AnalyticsProvider placement="head" config={analyticsConfig} />
   </head>
