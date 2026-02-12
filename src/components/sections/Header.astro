@@ -16,7 +16,7 @@ const { brand, navigation, uberEats } = Astro.props;
     </a>
     <nav class="hidden items-center gap-6 text-sm uppercase tracking-[0.12em] text-sand/70 md:flex" aria-label="Secciones">
       {navigation.map((item) => (
-          <a class="transition hover:text-gold" href={item.href} target="_blank" rel="noopener noreferrer">
+          <a class="transition hover:text-gold" href={item.href} rel="noopener noreferrer">
             {item.label}
           </a>
         ))}
