@@ -26,6 +26,12 @@ export function trackEvent(name: AnalyticsEventName, props?: AnalyticsProps) {
         ];
       }
     },
+    ga4: (eventName, eventProps) => {
+      const gtag = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
+      if (typeof gtag === 'function') {
+        gtag('event', eventName, { ...(eventProps ?? {}) });
+      }
+    },
     none: () => {}
   };
 

@@ -8,6 +8,7 @@ const { config, placement = 'head' } = Astro.props as {
 
 const provider = config?.provider ?? 'none';
 const gtmId = config?.gtmId ?? '';
+const ga4Id = config?.ga4Id ?? '';
 const isHead = placement === 'head';
 ---
 
@@ -17,6 +18,18 @@ const isHead = placement === 'head';
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer',gtmId);
   </script>
+) : null}
+
+{isHead && provider === 'ga4' && ga4Id ? (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+    <script is:inline define:vars={{ ga4Id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', ga4Id, { send_page_view: false });
+    </script>
+  </>
 ) : null}
 
 {!isHead && provider === 'gtm' && gtmId ? (

@@ -155,6 +155,26 @@ const buildContext = (content = {}) => {
   };
 };
 
+const flattenForGtag = (payload) => {
+  const { event, acquisition, device, ids, content, ...rest } = payload;
+  const flat = { ...rest };
+
+  const addPrefixed = (prefix, obj) => {
+    if (!obj) return;
+    Object.entries(obj).forEach(([key, value]) => {
+      if (value === undefined) return;
+      flat[`${prefix}_${key}`] = value;
+    });
+  };
+
+  addPrefixed('acq', acquisition);
+  addPrefixed('device', device);
+  addPrefixed('ids', ids);
+  addPrefixed('content', content);
+
+  return flat;
+};
+
 const shouldFire = (eventName, element) => {
   const timestamp = now();
   if (!element) {
@@ -176,13 +196,18 @@ const shouldFire = (eventName, element) => {
 
 const pushEvent = (eventName, payload = {}, element) => {
   if (!shouldFire(eventName, element)) return;
-  window.dataLayer = window.dataLayer || [];
   const context = buildContext(payload.content);
-  window.dataLayer.push({
+  const merged = {
     event: eventName,
     ...context,
     ...payload
-  });
+  };
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', eventName, flattenForGtag(merged));
+    return;
+  }
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(merged);
 };
 
 const normalizeProduct = (element) => {
